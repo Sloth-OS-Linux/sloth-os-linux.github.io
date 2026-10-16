@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101516">
+  <meta name="description" content="Sloth OS is a familiar KDE desktop with atomic updates and thoughtful Windows app support.">
+  <title>Sloth OS — A calmer way to use your PC</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./site.css">
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Sloth OS home">
+      <span class="brand-mark" aria-hidden="true"><i></i><b></b></span>
+      <span>sloth<span class="brand-light">OS</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#why-sloth">Why Sloth</a>
+      <a href="#windows-apps">Windows apps</a>
+      <a href="#privacy">Privacy</a>
+      <a href="./getting-started.html">Guides</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/bathorizsolt/sloth-os">View on GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> Linux, made familiar</p>
+        <h1>Your computer.<br><span>Your pace.</span></h1>
+        <p class="hero-lede">A thoughtful KDE desktop for everyday work and play, with a little extra help for the Windows apps you still rely on.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="./getting-started.html">Explore the preview <span aria-hidden="true">→</span></a>
+          <a class="button button-quiet" href="https://github.com/bathorizsolt/sloth-os">See the project</a>
+        </div>
+        <p class="hero-note">Sloth OS is in active development. It is not ready for everyday installation yet.</p>
+      </div>
+      <div class="desktop-scene" role="img" aria-label="Illustration of a calm Sloth OS desktop">
+        <div class="scene-glow"></div>
+        <div class="desktop-card">
+          <div class="desktop-top"><span class="window-dots"><i></i><i></i><i></i></span><span>Sloth OS · Desktop</span><span class="top-status">● Online</span></div>
+          <div class="desktop-wallpaper">
+            <div class="wallpaper-orbit orbit-one"></div><div class="wallpaper-orbit orbit-two"></div>
+            <div class="wallpaper-copy"><span class="tiny-label">A LITTLE MORE ROOM TO BREATHE</span><strong>Make yourself<br>at home.</strong><span class="wallpaper-caption">Your desktop, your way.</span></div>
+            <div class="desktop-widget"><span class="widget-label">SYSTEM STATUS</span><strong><span class="status-dot"></span> Up to date</strong><small>Updates happen quietly in the background.</small></div>
+          </div>
+          <div class="desktop-dock"><span class="dock-start"><b></b></span><span class="dock-icon icon-browser">◉</span><span class="dock-icon icon-files">▰</span><span class="dock-icon icon-store">▦</span><span class="dock-divider"></span><span class="dock-clock">10:24<br><small>THU, OCT 16</small></span></div>
+        </div>
+        <div class="scene-chip"><span class="chip-check">✓</span><span><b>Ready when you are</b><small>Familiar by design</small></span></div>
+        <p class="scene-caption">A desktop concept, not a screenshot.</p>
+      </div>
+    </section>
+
+    <section class="quick-facts section-wrap" aria-label="At a glance">
+      <div><span class="fact-icon">01</span><p><b>KDE Plasma</b><small>A desktop you can make your own</small></p></div>
+      <div><span class="fact-icon">02</span><p><b>Atomic updates</b><small>Roll back if an update misbehaves</small></p></div>
+      <div><span class="fact-icon">03</span><p><b>Windows app support</b><small>Automatic setup, app by app</small></p></div>
+    </section>
+
+    <section class="section-wrap content-section" id="why-sloth">
+      <div class="section-heading">
+        <p class="eyebrow">A better everyday rhythm</p>
+        <h2>Familiar, with more<br><em>peace of mind.</em></h2>
+        <p>Sloth OS brings together a polished KDE desktop and an operating system designed to update safely in the background.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-silver"><span class="card-number">01 / THE DESKTOP</span><div class="feature-symbol">✳</div><h3>Feels like home</h3><p>Start menu, taskbar and simple setup. Choose a layout and colour theme that feel right to you.</p><a href="./getting-started.html#first-boot">See what to expect <span aria-hidden="true">↗</span></a></article>
+        <article class="feature-card feature-blue"><span class="card-number">02 / UPDATES</span><div class="feature-symbol">↻</div><h3>Change with a way back</h3><p>The system updates atomically in the background. If an update causes trouble, the previous system deployment can be selected at startup.</p><a href="./faq.html#updates">How updates work <span aria-hidden="true">↗</span></a></article>
+        <article class="feature-card feature-green"><span class="card-number">03 / YOUR APPS</span><div class="feature-symbol">⌘</div><h3>Choose what you need</h3><p>Pick your browser, office suite, games and creative tools during setup. Nothing you did not ask for gets pinned to the desktop.</p><a href="./getting-started.html#apps">Explore app setup <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+
+    <section class="windows-section" id="windows-apps">
+      <div class="section-wrap windows-grid">
+        <div class="windows-copy">
+          <p class="eyebrow">A little Windows help</p>
+          <h2>Keep the apps<br>you count on.</h2>
+          <p>Open a Windows .exe or .msi and Sloth OS tries to find a setup that works for that program. It uses Proton through umu-launcher behind the scenes, with a system Wine fallback when needed.</p>
+          <a class="text-link" href="./windows-apps.html">How Windows app support works <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="flow-card">
+          <div class="flow-row"><span class="flow-step">01</span><span class="flow-icon">⌕</span><div><b>Recognize</b><small>Looks up known app and game fixes</small></div><span class="flow-check">✓</span></div>
+          <div class="flow-line"></div>
+          <div class="flow-row"><span class="flow-step">02</span><span class="flow-icon">⚙</span><div><b>Find a good fit</b><small>Tries compatible settings if needed</small></div><span class="flow-check">✓</span></div>
+          <div class="flow-line"></div>
+          <div class="flow-row"><span class="flow-step">03</span><span class="flow-icon">↗</span><div><b>Remember what works</b><small>Each program keeps its own settings</small></div><span class="flow-check">✓</span></div>
+          <div class="flow-foot"><span class="status-dot"></span> You see “Starting…” while Sloth OS does the rest.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section privacy-section" id="privacy">
+      <div class="privacy-mark" aria-hidden="true"><span>◎</span><i></i></div>
+      <div class="privacy-copy"><p class="eyebrow">Your choice, always</p><h2>Sharing is<br><em>opt in.</em></h2><p>Sloth OS can share anonymous Windows app settings to help other users. You choose during setup, can switch it off later, and still receive the shared settings either way.</p><a class="text-link" href="./privacy.html">Read the privacy details <span aria-hidden="true">→</span></a></div>
+      <div class="privacy-points"><p><span>✓</span> No app names are sent</p><p><span>✓</span> No files or usage times are sent</p><p><span>✓</span> Shared settings pass a safety allowlist</p></div>
+    </section>
+
+    <section class="release-section">
+      <div class="section-wrap release-card">
+        <div><p class="eyebrow">Development preview</p><h2>Not quite ready<br>to install. Yet.</h2><p>The installer, Windows app support and NVIDIA path are still being tested on real hardware. There is no public ISO download today.</p><a class="button button-primary" href="./getting-started.html">Read the testing guide <span aria-hidden="true">→</span></a></div>
+        <div class="release-status"><span class="status-ring"><i></i></span><small>PROJECT STATUS</small><b>In active development</b><span class="status-rule"></span><a href="https://github.com/bathorizsolt/sloth-os">Follow progress on GitHub ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section docs-section">
+      <div class="section-heading section-heading-row"><div><p class="eyebrow">The useful details</p><h2>Start with a guide.</h2></div><a class="text-link" href="https://github.com/bathorizsolt/sloth-os/blob/main/README.md">Developer README ↗</a></div>
+      <div class="guide-grid">
+        <a class="guide-card" href="./getting-started.html"><span class="guide-icon">↗</span><small>FOR TESTERS</small><b>Getting started</b><span>What is ready, what is not, and how to try the preview safely.</span><i>Read guide →</i></a>
+        <a class="guide-card" href="./windows-apps.html"><span class="guide-icon">⌘</span><small>APPS & GAMES</small><b>Windows programs</b><span>What happens when you open an .exe and what to expect.</span><i>Read guide →</i></a>
+        <a class="guide-card" href="./privacy.html"><span class="guide-icon">◎</span><small>YOUR DATA</small><b>Privacy</b><span>A plain-language breakdown of optional sharing.</span><i>Read guide →</i></a>
+        <a class="guide-card" href="./faq.html"><span class="guide-icon">?</span><small>QUICK ANSWERS</small><b>FAQ</b><span>Downloads, compatibility, updates and the project status.</span><i>Read answers →</i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><i></i><b></b></span><span>sloth<span class="brand-light">OS</span></span></a><span>Built to feel familiar. Still being tested.</span><nav aria-label="Footer"><a href="./getting-started.html">Guides</a><a href="./privacy.html">Privacy</a><a href="https://github.com/bathorizsolt/sloth-os">GitHub ↗</a></nav></div></footer>
+</body>
+</html>
