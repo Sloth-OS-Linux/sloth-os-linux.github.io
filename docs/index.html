@@ -18,7 +18,7 @@
       <span>Sloth OS</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="#desktop">The desktop</a><a href="#windows-apps">Windows apps</a><a href="#privacy">Privacy</a><a href="./getting-started.html">Guides</a>
+      <a href="#desktop">The desktop</a><a href="#sloth-center">Sloth Center</a><a href="#windows-apps">Windows apps</a><a href="#privacy">Privacy</a><a href="./getting-started.html">Guides</a>
     </nav>
     <a class="nav-cta" href="https://github.com/Sloth-OS-Linux/sloth-os-linux.github.io">Website & guides ↗</a>
   </header>
@@ -33,7 +33,7 @@
           <a class="button button-primary" href="./getting-started.html">Explore the tester guides <span aria-hidden="true">→</span></a>
           <a class="button button-quiet" href="https://github.com/Sloth-OS-Linux/sloth-os-linux.github.io">Website repository</a>
         </div>
-        <p class="hero-note">Sloth OS is a pre-release project. There is no public ISO yet; real-machine validation is still in progress.</p>
+        <p class="hero-note">Sloth OS is a pre-release project. There is no public ISO yet; testing on real computers is in progress.</p>
       </div>
       <figure class="desktop-preview">
         <img src="./assets/sloth-desktop-preview.png" alt="Actual Sloth OS KDE Plasma theme preview: a matte silver sloth logo centered on a charcoal desktop, above a simple bottom panel.">
@@ -42,9 +42,9 @@
     </section>
 
     <section class="quick-facts section-wrap" aria-label="At a glance">
-      <div><span class="fact-icon">01</span><p><b>KDE Plasma</b><small>Windows-style layout, Sloth OS look-and-feel</small></p></div>
-      <div><span class="fact-icon">02</span><p><b>Atomic updates</b><small>Keep a previous system deployment to roll back</small></p></div>
-      <div><span class="fact-icon">03</span><p><b>Windows programs</b><small>Per-app setup is experimental and still being tested</small></p></div>
+      <div><span class="fact-icon">01</span><p><b>KDE Plasma</b><small>Windows-style layout, in 50 languages</small></p></div>
+      <div><span class="fact-icon">02</span><p><b>Atomic updates</b><small>Signed images, a previous version kept for rollback</small></p></div>
+      <div><span class="fact-icon">03</span><p><b>Windows programs</b><small>Double-click an .exe, no Steam needed</small></p></div>
     </section>
 
     <section class="principle-band section-wrap" aria-labelledby="principle-title">
@@ -61,9 +61,21 @@
       </div>
     </section>
 
+    <section class="section-wrap content-section" id="sloth-center">
+      <div class="section-heading"><p class="eyebrow">Sloth Center</p><h2>Every setting,<br><em>one window.</em></h2><p>Sloth Center sits on the taskbar next to the file manager and the app store. Anything you would otherwise do in a terminal has a button here: updates, drivers, backups, accounts, disks and Windows programs.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-green"><span class="card-number">01 / UPDATES</span><div class="feature-symbol">↻</div><h3>Quiet, verified updates</h3><p>The system updates in the background and only accepts images signed by Sloth OS. A notification tells you when an update is ready, with a “Restart now” button.</p></article>
+        <article class="feature-card feature-silver"><span class="card-number">02 / FILE HISTORY</span><div class="feature-symbol">◷</div><h3>Previous versions</h3><p>Your home folder is snapshotted automatically. Right-click a file or folder and choose “Previous versions” to bring back what you deleted or changed. Backups to an external drive are one click away.</p></article>
+        <article class="feature-card feature-blue"><span class="card-number">03 / RESET</span><div class="feature-symbol">⟲</div><h3>Reset this PC</h3><p>Start over without a USB stick: keep your files and reset only the system settings, or erase everything and create a fresh account.</p></article>
+        <article class="feature-card feature-blue"><span class="card-number">04 / HARDWARE</span><div class="feature-symbol">⚙</div><h3>Drivers and devices</h3><p>NVIDIA machines switch to the NVIDIA image on their own. Game controllers, printers, scanners, firmware updates and phone pairing are managed from the desktop.</p></article>
+        <article class="feature-card feature-silver"><span class="card-number">05 / YOUR FILES</span><div class="feature-symbol">☁</div><h3>Cloud and moving in</h3><p>OneDrive and Google Drive appear as normal folders. Coming from Windows? Sloth OS can copy your Desktop, Documents, Pictures and browser bookmarks from the Windows drive.</p></article>
+        <article class="feature-card feature-green"><span class="card-number">06 / SIGN-IN</span><div class="feature-symbol">⚿</div><h3>PIN, fingerprint, encryption</h3><p>Sign in with a PIN or a fingerprint, on the login and lock screen alike. The installer can encrypt the whole disk with a password asked at startup.</p></article>
+      </div>
+    </section>
+
     <section class="windows-section" id="windows-apps">
       <div class="section-wrap windows-grid">
-        <div class="windows-copy"><p class="eyebrow">Windows program support</p><h2>Double-click.<br>Sloth OS takes it from there.</h2><p>The project is building an .exe and .msi handler that tries compatible settings per program using Proton via umu-launcher, with system Wine as a fallback. Compatibility is experimental; some apps and games will not work.</p><a class="text-link" href="./windows-apps.html">How it works and where it falls short <span aria-hidden="true">→</span></a></div>
+        <div class="windows-copy"><p class="eyebrow">Windows program support</p><h2>Double-click.<br>Sloth OS takes it from there.</h2><p>The project is building an .exe and .msi handler that tries compatible settings per program using Proton via umu-launcher, with system Wine as a fallback. Launchers such as Battle.net, EA app and Ubisoft Connect have their own recipes. When a program has a better Linux version (Discord, Chrome, Teams, Epic and GOG through Heroic), Sloth OS offers that first. Compatibility is experimental; some apps and games will not work.</p><a class="text-link" href="./windows-apps.html">How it works and where it falls short <span aria-hidden="true">→</span></a></div>
         <div class="flow-card">
           <div class="flow-row"><span class="flow-step">01</span><span class="flow-icon">⌕</span><div><b>Recognize</b><small>Checks known app and game fixes</small></div><span class="flow-check">✓</span></div><div class="flow-line"></div>
           <div class="flow-row"><span class="flow-step">02</span><span class="flow-icon">⚙</span><div><b>Try a compatible setup</b><small>Settings are isolated per program</small></div><span class="flow-check">✓</span></div><div class="flow-line"></div>
@@ -81,7 +93,7 @@
 
     <section class="release-section">
       <div class="section-wrap release-card">
-        <div><p class="eyebrow">Development preview</p><h2>In progress.<br>Not ready to install.</h2><p>The roadmap still calls for real-hardware validation and release preparation. There is no public ISO download today, so this site does not offer a download link.</p><a class="button button-primary" href="./getting-started.html">Read the tester guide <span aria-hidden="true">→</span></a></div>
+        <div><p class="eyebrow">Development preview</p><h2>In progress.<br>Not ready to install.</h2><p>Sloth OS already installs and runs on real computers, and the remaining work is testing: NVIDIA machines, installing next to Windows, and older BIOS-only PCs. There is no public ISO download today, so this site does not offer a download link.</p><a class="button button-primary" href="./getting-started.html">Read the tester guide <span aria-hidden="true">→</span></a></div>
         <div class="release-status"><span class="status-ring"><i></i></span><small>PROJECT STATUS</small><b>Pre-release development</b><span class="status-rule"></span><a href="https://github.com/Sloth-OS-Linux/sloth-os-linux.github.io">Follow progress on GitHub ↗</a></div>
       </div>
     </section>
