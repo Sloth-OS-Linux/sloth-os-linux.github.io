@@ -183,3 +183,5 @@ h1 span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--m
 .doc-content .shot-grid .shot{margin:0}
 @media(max-width:700px){.shot-grid{grid-template-columns:1fr}}
 .doc-content > .shot{max-width:680px}
+/* a button inside a guide: the guide's link color must not paint it over */
+.doc-content a.button-primary{color:#222427;text-decoration:none}

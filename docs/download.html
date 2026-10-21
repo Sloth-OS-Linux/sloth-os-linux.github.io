@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#222427"><title>Download — Sloth OS</title><style>.req-table{width:100%;border-collapse:collapse;margin:1rem 0 1.25rem;font-size:.95rem}.req-table th,.req-table td{text-align:left;vertical-align:top;padding:.6rem .7rem;border-bottom:1px solid rgba(127,127,127,.25)}.req-table thead th{font-weight:600;opacity:.75}.req-table tbody th{white-space:nowrap;font-weight:600}@media (max-width:640px){.req-table{font-size:.88rem}.req-table th,.req-table td{padding:.5rem .4rem}.req-table tbody th{white-space:normal}}</style><link rel="icon" href="./favicon.svg?v=sloth-black-icon-20261016" type="image/svg+xml"><link rel="stylesheet" href="./site.css?v=sloth-shots-20261020"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#222427"><title>Download — Sloth OS</title><style>.req-table{width:100%;border-collapse:collapse;margin:1rem 0 1.25rem;font-size:.95rem}.req-table th,.req-table td{text-align:left;vertical-align:top;padding:.6rem .7rem;border-bottom:1px solid rgba(127,127,127,.25)}.req-table thead th{font-weight:600;opacity:.75}.req-table tbody th{white-space:nowrap;font-weight:600}@media (max-width:640px){.req-table{font-size:.88rem}.req-table th,.req-table td{padding:.5rem .4rem}.req-table tbody th{white-space:normal}}</style><link rel="icon" href="./favicon.svg?v=sloth-black-icon-20261016" type="image/svg+xml"><link rel="stylesheet" href="./site.css?v=sloth-release-20261021"></head>
 <body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><a class="brand" href="./index.html"><img class="brand-logo" src="./assets/sloth-logo.svg" alt=""><span>Sloth OS</span></a><nav class="main-nav" aria-label="Main navigation"><a href="./download.html">Download</a><a href="./index.html#sloth-center">Sloth Center</a><a href="./windows-apps.html">Windows apps</a><a href="./faq.html">FAQ</a></nav><a class="nav-cta" href="https://github.com/Sloth-OS-Linux/sloth-os">View on GitHub ↗</a></header>
 <main id="main"><section class="doc-hero section-wrap"><p class="eyebrow">Sloth OS 1.0 · first public release</p><h1>Download <span>Sloth OS.</span></h1><p>One file, one USB stick, about twenty minutes. The USB stick lets you try Sloth OS without changing anything on your computer, and installs it when you are ready.</p></section>
 <div class="doc-layout section-wrap"><aside class="doc-sidebar"><small>ON THIS PAGE</small><a href="#download">Download</a><a href="#requirements">System requirements</a><a href="#usb">Make the USB stick</a><a href="#boot">Start from the USB stick</a><a href="#install">Install</a><a href="#check">Check the download</a><a href="#licenses">Licenses</a></aside>
@@ -33,13 +33,15 @@
 <li>Choose your USB stick and click <strong>Write</strong>. It takes 5–15 minutes.</li>
 </ol>
 <p>On Windows, <a href="https://rufus.ie">Rufus</a> works too: select the file, click Start, and if Rufus asks, choose <strong>Write in DD Image mode</strong>.</p>
+<p><strong>Ventoy</strong> has not been tested with Sloth OS yet. If you use it and it does not start, write the stick with Fedora Media Writer instead.</p>
 
 <h2 id="boot">Start from the USB stick</h2>
 <ol>
 <li>Plug the USB stick in and restart the computer.</li>
 <li>While it starts, press the boot menu key: usually <strong>F12</strong> (Dell, Lenovo, Acer), <strong>F9</strong> (HP), <strong>F8</strong> or <strong>Esc</strong> (ASUS), <strong>F11</strong> (MSI). On Windows you can also hold <strong>Shift</strong> while clicking Restart, then choose <em>Use a device</em>.</li>
-<li>Pick the USB stick (sometimes listed as “UEFI: …”). Secure Boot can stay on.</li>
+<li>Pick the USB stick (sometimes listed as “UEFI: …”).</li>
 </ol>
+<p><strong>Secure Boot</strong> can stay on. On a computer with an NVIDIA graphics card, Sloth OS installs the NVIDIA driver after installing and asks you to restart. At that restart a blue screen (“MOK management”) appears once: choose <strong>Enroll MOK</strong> → <strong>Continue</strong> → <strong>Yes</strong>, type the password <code>universalblue</code>, then choose <strong>Reboot</strong>. This allows the NVIDIA driver to load with Secure Boot on. Sloth Center → Drivers and hardware explains the same steps, and can prepare them again if you missed the screen. Computers without an NVIDIA card never see this screen.</p>
 <p>Sloth OS starts with a choice: <strong>Try Sloth OS</strong> (nothing is changed on your computer) or <strong>Install Sloth OS</strong>.</p>
 
 <h2 id="install">Install</h2>
