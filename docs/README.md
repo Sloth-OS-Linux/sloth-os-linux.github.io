@@ -16,4 +16,4 @@ Sloth OS is a pre-release project. There is no public ISO download yet, and the 
 
 ## Content policy
 
-The pages describe the project as it currently stands and do not advertise an ISO that is not available. Update the release status, installation guide, and privacy details when the implementation changes. The detailed developer setup and build steps remain in the [OS source repository](https://github.com/bathorizsolt/sloth-os).
+The pages describe the project as it currently stands and do not advertise an ISO that is not available. Update the release status, installation guide, and privacy details when the implementation changes. The detailed developer setup and build steps remain in the [OS source repository](https://github.com/Sloth-OS-Linux/sloth-os).
