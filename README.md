@@ -4,7 +4,7 @@ This repository contains the public Sloth OS website and tester guides. The OS s
 
 - **Website:** https://sloth-os-linux.github.io/
 - **Guides:** published from the `docs/` directory
-- **Status:** Sloth OS 1.0 released; the ISO is on [SourceForge](https://sourceforge.net/projects/sloth-os/files/)
+- **Status:** Sloth OS 1.0.2 is being prepared. Please wait for the updated ISO before downloading; the [download page](https://sloth-os-linux.github.io/download.html) will be updated when it is ready.
 
 ## GitHub Pages
 

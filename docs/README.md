@@ -12,7 +12,7 @@ The static website is served from this `docs/` folder:
 
 The workflow in `.github/workflows/pages.yml` deploys this directory to GitHub Pages when changes reach `main`. The site address is [https://sloth-os-linux.github.io/](https://sloth-os-linux.github.io/). If the first deployment does not start automatically, open **Settings → Pages** and select **GitHub Actions** as the build and deployment source.
 
-Sloth OS is a pre-release project. There is no public ISO download yet, and the roadmap still includes real-hardware validation and release preparation. Keep the pre-release and download-status copy current.
+Sloth OS 1.0.2 is being prepared. Keep the public download paused until the updated ISO is built, uploaded, and verified.
 
 ## Content policy
 
