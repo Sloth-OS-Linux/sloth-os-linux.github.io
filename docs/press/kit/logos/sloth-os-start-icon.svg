@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Sloth OS — hanging sloth</title>
+  <rect x="28" y="28" width="968" height="968" rx="250" fill="#c8ccd1"/>
+  <circle cx="512" cy="512" r="442" fill="none" stroke="#535a62" stroke-width="20" opacity=".16"/>
+  <!-- A sturdy branch, with a couple of bright leaves -->
+  <path d="M156 246 Q492 188 868 246" fill="none" stroke="#30353a" stroke-width="66" stroke-linecap="round"/>
+  <path d="M214 233 Q478 193 760 224" fill="none" stroke="#858c93" stroke-width="13" stroke-linecap="round" opacity=".7"/>
+  <path d="M755 222 Q794 139 862 155 Q849 215 755 222Z" fill="#e4e7ea"/>
+  <path d="M795 218 Q843 159 890 183 Q865 225 795 218Z" fill="#aeb4ba"/>
+  <!-- The sloth's long arms curl over the branch -->
+  <path d="M424 526 C369 488 348 414 324 328 C316 299 294 284 273 296 C250 309 253 338 269 361 C294 451 308 536 382 588" fill="none" stroke="#172321" stroke-width="66" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M600 526 C655 488 676 414 700 328 C708 299 730 284 751 296 C774 309 771 338 755 361 C730 451 716 536 642 588" fill="none" stroke="#172321" stroke-width="66" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Hands gripping the branch -->
+  <path d="M268 355 Q225 330 241 297 Q253 271 281 286 M756 355 Q799 330 783 297 Q771 271 743 286" fill="none" stroke="#172321" stroke-width="34" stroke-linecap="round"/>
+  <!-- Hanging body -->
+  <path d="M406 508 C365 542 367 628 399 699 L437 780 Q512 826 587 780 L625 699 C657 628 659 542 618 508Z" fill="#172321"/>
+  <path d="M448 591 Q512 562 576 591 L592 701 Q512 754 432 701Z" fill="#4a5056" opacity=".8"/>
+  <!-- Head and ears -->
+  <circle cx="392" cy="423" r="48" fill="#172321"/>
+  <circle cx="632" cy="423" r="48" fill="#172321"/>
+  <ellipse cx="512" cy="432" rx="153" ry="145" fill="#172321"/>
+  <!-- Sloth mask, eyes, and nose -->
+  <path d="M396 399 Q445 363 487 410 Q481 474 432 485 Q392 459 396 399Z" fill="#e1e4e7"/>
+  <path d="M628 399 Q579 363 537 410 Q543 474 592 485 Q632 459 628 399Z" fill="#e1e4e7"/>
+  <ellipse cx="442" cy="432" rx="17" ry="23" fill="#172321"/>
+  <ellipse cx="582" cy="432" rx="17" ry="23" fill="#172321"/>
+  <ellipse cx="512" cy="490" rx="43" ry="31" fill="#e1e4e7"/>
+  <path d="M492 481 Q512 466 532 481 Q531 501 512 505 Q493 501 492 481Z" fill="#172321"/>
+  <path d="M497 516 Q512 526 527 516" fill="none" stroke="#172321" stroke-width="9" stroke-linecap="round"/>
+  <!-- Curled toes -->
+  <path d="M443 770 Q408 805 432 830 Q451 849 475 817 M581 770 Q616 805 592 830 Q573 849 549 817" fill="none" stroke="#172321" stroke-width="38" stroke-linecap="round"/>
+  <circle cx="512" cy="918" r="9" fill="#e4e7ea"/>
+</svg>

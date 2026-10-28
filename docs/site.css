@@ -185,3 +185,6 @@ h1 span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--m
 .doc-content > .shot{max-width:680px}
 /* a button inside a guide: the guide's link color must not paint it over */
 .doc-content a.button-primary{color:#222427;text-decoration:none}
+
+.press-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:1rem}.press-logos figure{margin:0}.press-logo-box{display:grid;place-items:center;aspect-ratio:16/10;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.press-logo-box img{width:42%;height:auto}.press-logos figcaption{font-size:.72rem;color:var(--soft);margin-top:.5rem}
+@media(max-width:600px){.press-logos{grid-template-columns:1fr}}
