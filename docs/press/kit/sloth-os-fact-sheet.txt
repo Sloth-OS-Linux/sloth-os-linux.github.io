@@ -16,7 +16,7 @@ Requirements:  64-bit PC in UEFI mode, 4 GB memory (16 GB for games), 64 GB disk
 Download:      https://sloth-os-linux.github.io/download.html (ISO 5.2 GB)
 Website:       https://sloth-os-linux.github.io/
 Source code:   https://github.com/Sloth-OS-Linux/sloth-os
-Made by:       Zsolt Báthori, an independent developer
+Made by:       ZsLoth, an independent developer
 
 One line
 --------
