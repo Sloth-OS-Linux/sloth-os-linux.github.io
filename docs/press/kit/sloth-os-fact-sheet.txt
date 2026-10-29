@@ -54,9 +54,9 @@ What makes it different
 
 Honest status
 -------------
-Sloth OS is a young, one-person project. Installing on a whole disk, updates and backups are tested on real
-computers; installing next to Windows works in tests but has been tried on few real Windows computers; Windows
-program support depends on each program; NVIDIA computers have been tried with Secure Boot turned off.
+Sloth OS is a young, one-person project. Installing on a whole disk or next to Windows, updates and backups are
+tested on real computers; Windows program support depends on each program; NVIDIA computers have been tried with
+Secure Boot turned off.
 
 Using the material
 ------------------
