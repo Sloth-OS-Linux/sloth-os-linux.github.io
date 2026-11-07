@@ -35,6 +35,7 @@ h1 span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--m
 .button-primary{background:var(--mint);color:#222427}
 .button-primary:hover{background:#e3e5e8}
 .button-quiet{border:1px solid var(--line);color:#e3e5e8}
+.button-quiet:hover{background:#e3e5e8;border-color:#e3e5e8;color:#222427}
 .hero-note{font-size:.75rem;color:var(--soft);margin-top:1.1rem;max-width:410px}
 .desktop-scene{position:relative;min-height:380px;display:flex;align-items:center;justify-content:center}
 .scene-glow{position:absolute;width:78%;height:78%;border-radius:50%;background:radial-gradient(circle,rgba(113,150,114,.25),rgba(16,21,22,0) 68%);filter:blur(14px)}
@@ -109,6 +110,7 @@ h1 span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--m
 .release-card{display:grid;grid-template-columns:1.2fr .8fr;gap:10%;align-items:center}
 .release-card h2{font-size:2.5rem}.release-card p:not(.eyebrow){color:#9aa0a7;font-size:.8rem;max-width:455px}
 .release-card .button{margin-top:.45rem}
+.release-card .button+.button{margin-left:.6rem}
 .release-status{min-height:190px;padding:25px;border:1px solid rgba(180,185,192,.23);border-radius:15px;background:radial-gradient(circle at 100% 0,rgba(180,185,192,.09),transparent 55%),#303237;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .status-ring{height:34px;width:34px;border-radius:50%;border:1px solid rgba(180,185,192,.5);display:grid;place-items:center;margin-bottom:16px}
 .status-ring i{height:9px;width:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px var(--mint)}
@@ -185,7 +187,6 @@ h1 span{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--m
 .doc-content > .shot{max-width:680px}
 /* a button inside a guide: the guide's link color must not paint it over */
 .doc-content a.button-primary{color:#222427;text-decoration:none}
-.doc-content a.button-quiet{color:#e3e5e8;text-decoration:none}
 .distrowatch-note{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;margin-top:1.4rem}
 
 .press-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:1rem}.press-logos figure{margin:0}.press-logo-box{display:grid;place-items:center;aspect-ratio:16/10;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.press-logo-box img{width:42%;height:auto}.press-logos figcaption{font-size:.72rem;color:var(--soft);margin-top:.5rem}
