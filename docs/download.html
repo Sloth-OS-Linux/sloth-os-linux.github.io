@@ -15,7 +15,7 @@
 <table class="req-table">
 <thead><tr><th></th><th>Minimum</th><th>Recommended for games</th></tr></thead>
 <tbody>
-<tr><th>Computer</th><td colspan="2">64-bit PC (x86_64) that starts in <strong>UEFI</strong> mode: almost every computer from 2013 or later. Older BIOS-only PCs and ARM computers (Apple Silicon Macs, Snapdragon laptops) are not supported.</td></tr>
+<tr><th>Computer</th><td colspan="2">64-bit PC (x86_64) that starts in <strong>UEFI</strong> mode (almost every computer from 2013 or later) or in the older <strong>BIOS</strong> mode. On a BIOS-only PC, Sloth OS takes the whole disk; installing next to Windows needs UEFI. ARM computers (Apple Silicon Macs, Snapdragon laptops) are not supported.</td></tr>
 <tr><th>Processor</th><td>2 cores</td><td>4 cores or more</td></tr>
 <tr><th>Memory</th><td>4 GB</td><td>16 GB</td></tr>
 <tr><th>Disk space</th><td>64 GB</td><td>256 GB SSD or more (games are big)</td></tr>
@@ -40,7 +40,7 @@
 <ol>
 <li>Plug the USB stick in and restart the computer.</li>
 <li>While it starts, press the boot menu key: usually <strong>F12</strong> (Dell, Lenovo, Acer), <strong>F9</strong> (HP), <strong>F8</strong> or <strong>Esc</strong> (ASUS), <strong>F11</strong> (MSI). On Windows you can also hold <strong>Shift</strong> while clicking Restart, then choose <em>Use a device</em>.</li>
-<li>Pick the USB stick (sometimes listed as “UEFI: …”).</li>
+<li>Pick the USB stick (sometimes listed as “UEFI: …”; on an older BIOS-only PC, as the stick’s name or “USB HDD”).</li>
 </ol>
 <p><strong>Secure Boot</strong> can stay on. On a computer with an NVIDIA graphics card, Sloth OS installs the NVIDIA driver after installing and asks you to restart. At that restart a blue screen (“MOK management”) appears once: choose <strong>Enroll MOK</strong> → <strong>Continue</strong> → <strong>Yes</strong>, type the password <code>universalblue</code>, then choose <strong>Reboot</strong>. This allows the NVIDIA driver to load with Secure Boot on. Sloth Center → Drivers and hardware explains the same steps, and can prepare them again if you missed the screen. Computers without an NVIDIA card never see this screen.</p>
 <p>Sloth OS starts with a choice: <strong>Try Sloth OS</strong> (nothing is changed on your computer) or <strong>Install Sloth OS</strong>.</p>
