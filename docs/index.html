@@ -4,13 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#222427">
-  <meta name="description" content="Meet Sloth OS: a Fedora Atomic and KDE Plasma desktop with the Sloth Silver look, quiet updates, and experimental Windows app support.">
+  <meta name="description" content="Sloth OS 2.0: a free Linux desktop for everyday use and gaming that feels familiar from the first boot. Seven taskbar layouts, TV mode, Windows programs with a double-click, quiet updates, 50 languages.">
   <title>Sloth OS — A familiar desktop, in silver</title>
+  <link rel="canonical" href="https://sloth-os-linux.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sloth OS">
+  <meta property="og:title" content="Sloth OS 2.0 — A familiar desktop, in silver">
+  <meta property="og:description" content="A free Linux desktop for everyday use and gaming. Seven taskbar layouts, TV mode, Windows programs with a double-click, and no terminal needed.">
+  <meta property="og:url" content="https://sloth-os-linux.github.io/">
+  <meta property="og:image" content="https://sloth-os-linux.github.io/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Sloth OS desktop: a silver sloth on a graphite wallpaper, with a centered taskbar.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./favicon.svg?v=sloth-black-icon-20261016" type="image/svg+xml">
-  <link rel="stylesheet" href="./site.css?v=sloth-release-20261021">
-  <script src="./site.js?v=dw2-20261110" defer></script>
+  <link rel="preload" as="image" href="./assets/shots/v2/layout-windows11.webp" type="image/webp">
+  <link rel="stylesheet" href="./site.css?v=sloth-20-20261118">
+  <script src="./site.js?v=sloth-20-20261118" defer></script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="./index.html" aria-label="Sloth OS home">
@@ -18,126 +30,160 @@
       <span>Sloth OS</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation"><a href="./download.html">Download</a>
-      <a href="#desktop">The desktop</a><a href="#sloth-center">Sloth Center</a><a href="#windows-apps">Windows apps</a><a href="#privacy">Privacy</a><a href="./getting-started.html">Guides</a><a href="./press.html">Press kit</a>
+      <a href="#new">What’s new</a><a href="#sloth-center">Sloth Center</a><a href="#windows-apps">Windows apps</a><a href="#requirements">Requirements</a><a href="./getting-started.html">Guides</a>
     <a href="https://github.com/Sloth-OS-Linux/sloth-os/discussions">Community ↗</a></nav>
     <a class="nav-cta" href="https://github.com/Sloth-OS-Linux/sloth-os">View on GitHub ↗</a>
   </header>
 
   <main id="main">
-    <section class="hero section-wrap">
+    <section class="hero hero-20 section-wrap">
       <div class="hero-copy">
-        <p class="eyebrow">Fedora Atomic · KDE Plasma</p>
+        <a class="release-pill" href="#new"><span class="pill-tag">New</span> Sloth OS 2.0: TV mode, older PCs, moving in <span aria-hidden="true">→</span></a>
         <h1>A familiar<br>desktop, with a<br><span>Sloth OS face.</span></h1>
-        <p class="hero-lede">A Linux desktop for everyday use and gaming, designed to feel at home from the first boot. Sloth OS pairs KDE Plasma with its own silver sloth identity and a Windows-style layout.</p>
+        <p class="hero-lede">A free Linux desktop for everyday use and gaming that feels at home from the first boot. Pick the taskbar you know, install your apps in one wizard, and never open a terminal.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="./download.html">Download Sloth OS 1.6</a>
+          <a class="button button-primary button-big" href="./download.html">Download Sloth OS 2.0 <span aria-hidden="true">↓</span></a>
           <a class="button button-quiet" href="./getting-started.html">Getting started</a>
         </div>
-        <p class="hero-note"><strong>New: the Sloth OS community.</strong> Ask questions, share ideas and your setup, and vote on whether we should open a Discord or Matrix chat. <a href="https://github.com/Sloth-OS-Linux/sloth-os/discussions">Join the discussions ↗</a></p>
+        <ul class="hero-meta" aria-label="At a glance">
+          <li>Free, no account</li><li>50 languages</li><li>UEFI and BIOS PCs</li><li>No TPM 2.0 needed</li>
+        </ul>
       </div>
-      <figure class="desktop-preview">
-        <img src="./assets/shots/desktop.webp" width="1280" height="800" alt="The Sloth OS desktop: a silver sloth logo on a graphite wallpaper, with a taskbar showing the start button, Files, Firefox, Steam and Discover.">
-        <figcaption><span class="preview-dot"></span> The real Sloth OS desktop, after the Welcome wizard installed Firefox and Steam</figcaption>
+      <figure class="layout-show" data-layout-show>
+        <div class="layout-screen">
+          <img class="is-active" src="./assets/shots/v2/layout-windows11.webp" width="1600" height="900" alt="Sloth OS with the Windows 11 layout: the Start button and the app icons in the middle of the taskbar." data-name="Windows 11">
+          <img src="./assets/shots/v2/layout-windows10.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the Windows 10 layout: the Start button and the app icons on the left of the taskbar." data-name="Windows 10">
+          <img src="./assets/shots/v2/layout-windows7.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the Windows 7 layout: a classic Start menu, with window names on the taskbar." data-name="Windows 7">
+          <img src="./assets/shots/v2/layout-mac.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the Mac-like layout: a bar at the top and a floating dock at the bottom." data-name="Mac">
+          <img src="./assets/shots/v2/layout-ubuntu.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the Ubuntu-like layout: a bar at the top and a dock on the left." data-name="Ubuntu">
+          <img src="./assets/shots/v2/layout-chromeos.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the ChromeOS-like layout: a launcher in the corner and the apps in the middle." data-name="ChromeOS">
+          <img src="./assets/shots/v2/layout-floating.webp" width="1600" height="900" loading="lazy" alt="Sloth OS with the floating layout: a small bar that stays out of the way." data-name="Floating">
+        </div>
+        <figcaption>
+          <span class="layout-label"><span class="preview-dot"></span> Seven taskbars, one click apart</span>
+          <span class="layout-chips" role="group" aria-label="Taskbar layouts" data-layout-chips></span>
+        </figcaption>
       </figure>
     </section>
 
-    <section class="quick-facts section-wrap" aria-label="At a glance">
-      <div><span class="fact-icon">01</span><p><b>KDE Plasma</b><small>Windows-style layout, in 50 languages</small></p></div>
-      <div><span class="fact-icon">02</span><p><b>Atomic updates</b><small>Signed images, a previous version kept for rollback</small></p></div>
-      <div><span class="fact-icon">03</span><p><b>Windows programs</b><small>Double-click an .exe, no Steam needed</small></p></div>
+    <section class="quick-facts quick-facts-4 section-wrap" aria-label="At a glance">
+      <div><span class="fact-icon">01</span><p><b>Feels like home</b><small>Windows, Mac, Ubuntu or ChromeOS layouts</small></p></div>
+      <div><span class="fact-icon">02</span><p><b>Quiet updates</b><small>Signed, in the background, one click back</small></p></div>
+      <div><span class="fact-icon">03</span><p><b>Games ready</b><small>Steam, TV mode, controllers, drivers</small></p></div>
+      <div><span class="fact-icon">04</span><p><b>Windows programs</b><small>Double-click an .exe, no Steam needed</small></p></div>
     </section>
 
-    <section class="principle-band section-wrap" aria-labelledby="principle-title">
+    <section class="principle-band section-wrap reveal" aria-labelledby="principle-title">
       <div><p class="eyebrow">THE PRINCIPLE</p><h2 id="principle-title">If you need the terminal,<br><em>that’s my fault.</em></h2></div>
       <p>I’m building Sloth OS on my own. Everyday tasks should be available from the desktop, without asking people to learn command-line tools. If the terminal is required, I still have work to do.</p>
     </section>
 
-    <section class="section-wrap content-section" id="from-windows">
-      <div class="section-heading"><p class="eyebrow">Coming from Windows?</p><h2>Made for Windows users.<br><em>Free to be yours.</em></h2><p>Sloth OS is built for people who know Windows and want a computer that is simply theirs: no account to sign in to, no ads in the Start menu, no restart in the middle of your evening. Everything sits where your hands expect it, and you can stop worrying about the rest.</p></div>
-      <div class="feature-grid">
-        <article class="feature-card feature-silver"><span class="card-number">01 / FAMILIAR</span><div class="feature-symbol">⊞</div><h3>Feels like home on day one</h3><p>A taskbar and Start menu like Windows 10 or 11, a file manager, right-click menus, and the shortcuts you already use, like Alt+Tab and the Windows key. Prefer the Windows 7 look, a Mac with a Launchpad, Ubuntu, ChromeOS or a floating bar? One click.</p></article>
-        <article class="feature-card feature-blue"><span class="card-number">02 / YOUR STUFF</span><div class="feature-symbol">⇢</div><h3>Bring your files and programs</h3><p>Sloth OS copies your Desktop, Documents, Pictures and browser bookmarks from the Windows on the same computer, without changing it. Many Windows programs install with a double-click.</p></article>
-        <article class="feature-card feature-green"><span class="card-number">03 / SETTINGS</span><div class="feature-symbol">⚙</div><h3>Settings you’ll recognise</h3><p>Sloth Center is the Settings app you know: updates, displays, sound, Bluetooth, Wi-Fi, backups, and even “Reset this PC”. Offline Help answers the common problems, in your language.</p></article>
-        <article class="feature-card feature-silver"><span class="card-number">04 / GAMES</span><div class="feature-symbol">◈</div><h3>Your games come too</h3><p>Steam, controllers and the graphics drivers are set up for you. “Will it run?” tells you how well a game runs on Sloth OS before you buy it, from thousands of players’ reports.</p></article>
-        <article class="feature-card feature-blue"><span class="card-number">05 / FREEDOM</span><div class="feature-symbol">✦</div><h3>Free, in every sense</h3><p>No licence key, no forced account, no ads, and nothing sent anywhere unless you say yes. No TPM 2.0 needed, so it gives a second life to PCs that Windows 11 turns away. The source is open for anyone to read.</p></article>
-        <article class="feature-card feature-green"><span class="card-number">06 / CALM</span><div class="feature-symbol">☾</div><h3>Your computer, your schedule</h3><p>Updates download quietly in the background and only what changed. You choose the hour, and quiet hours keep restart reminders away while you play. The previous version is always one click away.</p></article>
+    <section class="section-wrap content-section" id="new">
+      <div class="section-heading reveal"><p class="eyebrow">New in Sloth OS 2.0</p><h2>The biggest update yet.<br><em>Still no terminal.</em></h2><p>Already running Sloth OS? You get 2.0 as a normal, small update and switch to it at the next restart. New here? Everything below is in the installer.</p></div>
+      <div class="new-grid">
+        <article class="new-card new-wide reveal">
+          <div class="new-text"><span class="card-number">TV MODE</span><h3>Your couch, a game console</h3><p>Steam’s big-screen interface on the whole screen, made for a controller and a TV, with our own start-up video. The games that are not from Steam (Epic, GOG, Amazon, Flatpak and Windows games) show up in it too, with their pictures. Switch to Desktop brings back everything as you left it.</p></div>
+          <button class="new-shot" type="button" data-zoom="./assets/shots/v2/center-games.webp" aria-label="Enlarge: Sloth Center's Games page"><img src="./assets/shots/v2/center-games.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Games page: SuperTuxKart, Luanti and Mindustry with Play buttons, Game mode switched on, and TV mode with an Open it on the whole screen now button."></button>
+        </article>
+        <article class="new-card new-wide new-flip reveal">
+          <div class="new-text"><span class="card-number">MOVING IN</span><h3>Your files come along</h3><p>Sloth OS finds the Windows on the same computer and copies your Desktop, Documents, Pictures, Music, Videos and browser bookmarks, only reading from Windows. New in 2.0: the same from another Linux on the computer, with its apps and Steam games.</p></div>
+          <button class="new-shot new-shot-pair" type="button" data-zoom="./assets/shots/v2/windows-import.webp" aria-label="Enlarge: bringing files over from Windows"><img src="./assets/shots/v2/windows-import.webp" width="1082" height="750" loading="lazy" alt="Bring your files over from Windows? Desktop, Documents, Music, Pictures and Videos ticked, with their sizes, and a Bring over button."><img class="pair-after" src="./assets/shots/v2/windows-import-done.webp" width="1082" height="750" loading="lazy" alt="Done: 52 files from Windows are here."></button>
+        </article>
+        <article class="new-card reveal"><span class="new-icon" aria-hidden="true">⌂</span><span class="card-number">OLDER PCS</span><h3>A second life for old computers</h3><p>Sloth OS now installs on PCs that start in the old BIOS mode, and a lighter desktop turns itself on where it helps.</p></article>
+        <article class="new-card reveal"><span class="new-icon" aria-hidden="true">⇲</span><span class="card-number">ONE CLICK</span><h3>“I can’t open this file”</h3><p>A file no app opens yet? Sloth OS offers the right app, installs it with one click, then opens the file.</p></article>
+        <article class="new-card reveal"><span class="new-icon" aria-hidden="true">◈</span><span class="card-number">GAMES</span><h3>One library, game mode</h3><p>Steam, Heroic, Flatpak and Windows games in one place. While you play, notifications wait and the computer gives the game its best.</p></article>
+        <article class="new-card reveal"><span class="new-icon" aria-hidden="true">✉</span><span class="card-number">FEEDBACK</span><h3>Reports that respect you</h3><p>Feedback hides your personal details and shows you exactly what is sent, before you send it.</p></article>
       </div>
+      <p class="new-more reveal"><a class="text-link" href="./download.html#whats-new">All the release notes <span aria-hidden="true">→</span></a></p>
     </section>
 
-    <section class="section-wrap content-section" id="desktop">
-      <div class="section-heading"><p class="eyebrow">The Sloth OS look</p><h2>Matte silver.<br><em>Charcoal dark.</em></h2><p>The default desktop uses the Sloth Silver Dark colour scheme: graphite surfaces, soft silver text and highlights, and restrained blue links. The source also includes light, white, black, night, mist and sage variations.</p></div>
+    <section class="section-wrap content-section" id="from-windows">
+      <div class="section-heading reveal"><p class="eyebrow">Coming from Windows?</p><h2>Made for Windows users.<br><em>Free to be yours.</em></h2><p>Sloth OS is built for people who know Windows and want a computer that is simply theirs: no account to sign in to, no ads in the Start menu, no restart in the middle of your evening. Everything sits where your hands expect it, and you can stop worrying about the rest.</p></div>
       <div class="feature-grid">
-        <article class="feature-card feature-silver"><span class="card-number">01 / DEFAULT THEME</span><div class="feature-symbol palette-swatches" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>Sloth Silver Dark</h3><p>Graphite surfaces, soft silver highlights, and restrained blue links give the default desktop its calm, familiar feel.</p><a href="./getting-started.html#first-boot">See what to expect <span aria-hidden="true">↗</span></a></article>
-        <article class="feature-card feature-blue"><span class="card-number">02 / DESKTOP</span><div class="feature-symbol">▱</div><h3>Familiar KDE layout</h3><p>A Windows-style taskbar and start menu, built as a KDE Plasma look-and-feel package.</p><a href="./getting-started.html#first-boot">What to expect <span aria-hidden="true">↗</span></a></article>
-        <article class="feature-card feature-green"><span class="card-number">03 / SYSTEM</span><div class="feature-symbol">↻</div><h3>Atomic by design</h3><p>Sloth OS is built on Fedora Atomic. Updates are applied as a system image, with a previous deployment available for rollback.</p><a href="./faq.html#updates">How updates work <span aria-hidden="true">↗</span></a></article>
+        <article class="feature-card feature-silver reveal"><span class="card-number">01 / FAMILIAR</span><div class="feature-symbol">⊞</div><h3>Feels like home on day one</h3><p>A taskbar and Start menu like Windows 10 or 11, a file manager, right-click menus, and the shortcuts you already use, like Alt+Tab and the Windows key. Prefer the Windows 7 look, a Mac with a Launchpad, Ubuntu, ChromeOS or a floating bar? One click.</p></article>
+        <article class="feature-card feature-blue reveal"><span class="card-number">02 / YOUR STUFF</span><div class="feature-symbol">⇢</div><h3>Bring your files and programs</h3><p>Sloth OS copies your Desktop, Documents, Pictures and browser bookmarks from the Windows (or another Linux) on the same computer, without changing it. Many Windows programs install with a double-click.</p></article>
+        <article class="feature-card feature-green reveal"><span class="card-number">03 / SETTINGS</span><div class="feature-symbol">⚙</div><h3>Settings you’ll recognise</h3><p>Sloth Center is the Settings app you know: updates, displays, sound, Bluetooth, Wi-Fi, backups, and even “Reset this PC”. Offline Help answers the common problems, in your language.</p></article>
+        <article class="feature-card feature-silver reveal"><span class="card-number">04 / GAMES</span><div class="feature-symbol">◈</div><h3>Your games come too</h3><p>Steam, controllers and the graphics drivers are set up for you. “Will it run?” tells you how well a game runs on Sloth OS before you buy it, from thousands of players’ reports.</p></article>
+        <article class="feature-card feature-blue reveal"><span class="card-number">05 / FREEDOM</span><div class="feature-symbol">✦</div><h3>Free, in every sense</h3><p>No licence key, no forced account, no ads, and nothing sent anywhere unless you say yes. No TPM 2.0 needed, so it gives a second life to PCs that Windows 11 turns away. The source is open for anyone to read.</p></article>
+        <article class="feature-card feature-green reveal"><span class="card-number">06 / CALM</span><div class="feature-symbol">☾</div><h3>Your computer, your schedule</h3><p>Updates download quietly in the background and only what changed. You choose the hour, and quiet hours keep restart reminders away while you play. The previous version is always one click away.</p></article>
       </div>
     </section>
 
     <section class="section-wrap content-section" id="sloth-center">
-      <div class="section-heading"><p class="eyebrow">Sloth Center</p><h2>Every setting,<br><em>one window.</em></h2><p>Sloth Center sits on the taskbar next to the file manager and the app store. Anything you would otherwise do in a terminal has a button here: updates, drivers, backups, accounts, disks and Windows programs.</p></div>
-      <div class="feature-grid">
-        <article class="feature-card feature-green"><span class="card-number">01 / UPDATES</span><div class="feature-symbol">↻</div><h3>Quiet, verified updates</h3><p>The system updates in the background and only accepts images signed by Sloth OS. A notification tells you when an update is ready, with a “Restart now” button.</p></article>
-        <article class="feature-card feature-silver"><span class="card-number">02 / FILE HISTORY</span><div class="feature-symbol">◷</div><h3>Previous versions</h3><p>Your home folder is snapshotted automatically. Right-click a file or folder and choose “Previous versions” to bring back what you deleted or changed. Backups to an external drive are one click away.</p></article>
-        <article class="feature-card feature-blue"><span class="card-number">03 / RESET</span><div class="feature-symbol">⟲</div><h3>Reset this PC</h3><p>Start over without a USB stick: keep your files and reset only the system settings, or erase everything and create a fresh account. Keep a backup: erasing everything also erases the saved states on the computer.</p></article>
-        <article class="feature-card feature-blue"><span class="card-number">04 / HARDWARE</span><div class="feature-symbol">⚙</div><h3>Drivers and devices</h3><p>NVIDIA machines switch to the NVIDIA image on their own. Game controllers, printers, scanners, firmware updates and phone pairing are managed from the desktop.</p></article>
-        <article class="feature-card feature-silver"><span class="card-number">05 / YOUR FILES</span><div class="feature-symbol">☁</div><h3>Cloud and moving in</h3><p>OneDrive and Google Drive appear as normal folders. Coming from Windows? Sloth OS can copy your Desktop, Documents, Pictures and browser bookmarks from the Windows drive.</p></article>
-        <article class="feature-card feature-green"><span class="card-number">06 / SIGN-IN</span><div class="feature-symbol">⚿</div><h3>PIN, fingerprint, encryption</h3><p>Sign in with a PIN or a fingerprint, on the login and lock screen alike. The installer can encrypt the whole disk with a password asked at startup.</p></article>
+      <div class="section-heading reveal"><p class="eyebrow">Sloth Center</p><h2>Every setting,<br><em>one window.</em></h2><p>Sloth Center sits on the taskbar next to the file manager and the app store. Anything you would otherwise do in a terminal has a button here. Take a look around:</p></div>
+      <div class="tour reveal" data-tour>
+        <div class="tour-tabs" role="tablist" aria-label="Sloth Center pages">
+          <button type="button" role="tab" id="tab-updates" aria-controls="panel-updates" aria-selected="true">Updates</button>
+          <button type="button" role="tab" id="tab-apps" aria-controls="panel-apps" aria-selected="false" tabindex="-1">Apps</button>
+          <button type="button" role="tab" id="tab-games" aria-controls="panel-games" aria-selected="false" tabindex="-1">Games</button>
+          <button type="button" role="tab" id="tab-appearance" aria-controls="panel-appearance" aria-selected="false" tabindex="-1">Appearance</button>
+          <button type="button" role="tab" id="tab-disks" aria-controls="panel-disks" aria-selected="false" tabindex="-1">Disks</button>
+          <button type="button" role="tab" id="tab-feedback" aria-controls="panel-feedback" aria-selected="false" tabindex="-1">Feedback</button>
+        </div>
+        <div class="tour-panels">
+          <figure class="tour-panel" role="tabpanel" id="panel-updates" aria-labelledby="tab-updates"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-updates.webp" aria-label="Enlarge: the Updates page"><img src="./assets/shots/v2/center-updates.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Updates page: Your system is up to date, Sloth OS 2.0, the list of what is new in 2.0, app updates and computer firmware."></button><figcaption><b>Updates</b> The system updates itself in the background as one piece and only accepts images signed by Sloth OS. What is new shows right here, and the previous version is one click away.</figcaption></figure>
+          <figure class="tour-panel" role="tabpanel" id="panel-apps" aria-labelledby="tab-apps" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-apps.webp" aria-label="Enlarge: the Apps page"><img src="./assets/shots/v2/center-apps.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Apps page: Discord, Firefox, GIMP, Heroic, LibreOffice, LocalSend, Spotify, Steam, Thunderbird, VLC and more, each with Open and Remove."></button><figcaption><b>Apps</b> Every installed app in one list, with Open and Remove. Apps update themselves once a day, and Get more apps opens the store.</figcaption></figure>
+          <figure class="tour-panel" role="tabpanel" id="panel-games" aria-labelledby="tab-games" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-games.webp" aria-label="Enlarge: the Games page"><img src="./assets/shots/v2/center-games.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Games page: the game library with Play buttons, Game mode and TV mode."></button><figcaption><b>Games</b> Every game in one library with a Play button, per-game FPS display and upscaling, Game mode, TV mode and “Will it run?”.</figcaption></figure>
+          <figure class="tour-panel" role="tabpanel" id="panel-appearance" aria-labelledby="tab-appearance" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-appearance.webp" aria-label="Enlarge: the Appearance page"><img src="./assets/shots/v2/center-appearance.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Appearance page: seven taskbar layouts to click, and the color schemes below."></button><figcaption><b>Appearance</b> Seven taskbar layouts and thirteen color schemes, applied the moment you click. Your pinned apps stay where they are.</figcaption></figure>
+          <figure class="tour-panel" role="tabpanel" id="panel-disks" aria-labelledby="tab-disks" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-disks-windows.webp" aria-label="Enlarge: the Disks page"><img src="./assets/shots/v2/center-disks-windows.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Disks page: networks, Delete unneeded files, and Bring files over from Windows."></button><figcaption><b>Disks</b> What uses the space, the disks’ health, network folders, sharing a folder with the computers at home, cleaning up, and bringing files over from Windows.</figcaption></figure>
+          <figure class="tour-panel" role="tabpanel" id="panel-feedback" aria-labelledby="tab-feedback" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-feedback.webp" aria-label="Enlarge: the Feedback page"><img src="./assets/shots/v2/center-feedback.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Feedback page: problem, idea or other, a box to describe what happened, and Show what is sent."></button><figcaption><b>Feedback</b> Tell the developers what went wrong in your own words. Personal details are hidden, and you can see exactly what is sent.</figcaption></figure>
+        </div>
       </div>
-      <div class="shot-grid">
-        <figure class="shot"><img src="./assets/shots/center-updates.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Updates page: the system is up to date, with the current version, a Check for updates button, app updates and a button to go back to the previous version."><figcaption>Updates: the current version, and the previous one a click away</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-backup.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, File backup page: automatic hourly backup switched on, buttons to restore a file or find deleted ones, saving Sloth OS settings to a file, how long to keep saved states, and a Back up now button."><figcaption>File backup: hourly saved states of your own files, and your settings in a file</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-reset.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Reset this PC page with two choices: Keep my files, or Remove everything."><figcaption>Reset this PC: keep your files, or start completely fresh</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-drivers.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Drivers and hardware page: the graphics cards with the NVIDIA driver installed, game controller pairing, and display and sound profiles."><figcaption>Drivers and hardware: graphics, controllers and profiles</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section-wrap content-section" id="new-in-1-2">
-      <div class="section-heading"><p class="eyebrow">Built in</p><h2>Smaller updates.<br><em>Smarter answers.</em></h2><p>Updates now download only what changed, a few hundred MB instead of gigabytes. And Sloth Center learned to answer the questions people ask most: will this game run, where is my NAS, why is it asking me to restart now?</p></div>
-      <div class="shot-grid">
-        <figure class="shot"><img src="./assets/shots/center-will-it-run.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Games page: Will it run? search for Elden Ring shows Runs well, 94% of 387 players say it works, the share by graphics card, the anti-cheat and the sources."><figcaption>“Will it run?”: how well a game runs, from thousands of players’ reports</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-blocked-game.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Games page: Will it run? search for Fortnite shows Blocked by its makers: not Sloth OS's fault, Epic Games doesn't allow the game on Linux."><figcaption>When the makers block Linux, it says so plainly, and whom to ask</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-network-folders.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Disks page: Network folders with a NAS folder added, another computer found on the network that shares nothing yet, and a field to type an address like \\NAS\Photos."><figcaption>Network folders: your NAS in the file manager, found by itself</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-quiet-hours.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Updates page: the hour system updates download, and quiet hours from 22:00 to 08:00 without restart reminders."><figcaption>Choose when updates download, and keep restart reminders out of your evening</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-profiles.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Drivers and hardware page: display and sound profiles named Desk, Living room TV and Headset, each with a Use button."><figcaption>Display and sound profiles: Desk, TV or headset in one click</figcaption></figure>
-        <figure class="shot"><img src="./assets/shots/center-help.webp" width="1010" height="714" loading="lazy" alt="Sloth Center, Help page: answers to common problems such as an update that caused trouble, no internet, a missing file, or a program that doesn't start, each with a button to the right page."><figcaption>Help: the common problems answered offline, in your language</figcaption></figure>
+      <div class="feature-grid feature-grid-tight">
+        <article class="feature-card feature-silver reveal"><span class="card-number">FILE HISTORY</span><div class="feature-symbol">◷</div><h3>Previous versions</h3><p>Your home folder is snapshotted automatically. Right-click a file or folder and choose “Previous versions” to bring back what you deleted or changed.</p></article>
+        <article class="feature-card feature-blue reveal"><span class="card-number">RESET</span><div class="feature-symbol">⟲</div><h3>Reset this PC</h3><p>Start over without a USB stick: keep your files and reset only the system settings, or erase everything and create a fresh account.</p></article>
+        <article class="feature-card feature-green reveal"><span class="card-number">SIGN-IN</span><div class="feature-symbol">⚿</div><h3>PIN, fingerprint, encryption</h3><p>Sign in with a PIN or a fingerprint, on the login and lock screen alike. The installer can encrypt the whole disk with a password asked at startup.</p></article>
       </div>
     </section>
 
     <section class="windows-section" id="windows-apps">
       <div class="section-wrap windows-grid">
-        <div class="windows-copy"><p class="eyebrow">Windows program support</p><h2>Double-click.<br>Sloth OS takes it from there.</h2><p>The project is building an .exe and .msi handler that tries compatible settings per program using Proton via umu-launcher, with system Wine as a fallback. Launchers such as Battle.net, EA app and Ubisoft Connect have their own recipes. When a program has a better Linux version (Discord, Chrome, Teams, Epic and GOG through Heroic), Sloth OS offers that first. Compatibility is experimental; some apps and games will not work.</p><a class="text-link" href="./windows-apps.html">How it works and where it falls short <span aria-hidden="true">→</span></a></div>
-        <div class="flow-card">
+        <div class="windows-copy reveal"><p class="eyebrow">Windows program support</p><h2>Double-click.<br>Sloth OS takes it from there.</h2><p>Double-click an .exe or .msi and Sloth OS tries the settings that work for that program, each program in its own space. Launchers such as Battle.net, EA app and Ubisoft Connect have their own recipes. When a program has a better Linux version (Discord, Chrome, Teams, Epic and GOG through Heroic), Sloth OS offers that first. Not every Windows program runs; when one doesn’t, Sloth OS says so plainly.</p><a class="text-link" href="./windows-apps.html">How it works and where it falls short <span aria-hidden="true">→</span></a></div>
+        <div class="flow-card reveal">
           <div class="flow-row"><span class="flow-step">01</span><span class="flow-icon">⌕</span><div><b>Recognize</b><small>Checks known app and game fixes</small></div><span class="flow-check">✓</span></div><div class="flow-line"></div>
           <div class="flow-row"><span class="flow-step">02</span><span class="flow-icon">⚙</span><div><b>Try a compatible setup</b><small>Settings are isolated per program</small></div><span class="flow-check">✓</span></div><div class="flow-line"></div>
           <div class="flow-row"><span class="flow-step">03</span><span class="flow-icon">↻</span><div><b>Remember what works</b><small>Return to a known working version</small></div><span class="flow-check">✓</span></div>
-          <div class="flow-foot">The intended flow keeps Wine and Proton details out of the normal launch experience.</div>
+          <div class="flow-foot">No technical words on the way: you see the program’s name, a progress bar and a plain sentence.</div>
         </div>
       </div>
     </section>
 
+    <section class="section-wrap content-section" id="requirements">
+      <div class="section-heading reveal"><p class="eyebrow">Will it run on my PC?</p><h2>Most likely,<br><em>yes.</em></h2><p>Sloth OS runs on most 64-bit PCs, including many that Windows 11 turns away. Try it from the USB stick first: nothing on your computer changes until you choose to install.</p></div>
+      <div class="req-grid">
+        <div class="req-card reveal"><small>COMPUTER</small><b>64-bit PC</b><span>Starts in UEFI mode, or the older BIOS mode (new in 2.0). Not ARM (Apple Silicon, Snapdragon).</span></div>
+        <div class="req-card reveal"><small>MEMORY</small><b>4 GB</b><span>16 GB recommended for games.</span></div>
+        <div class="req-card reveal"><small>DISK</small><b>64 GB</b><span>A 256 GB SSD or more for games.</span></div>
+        <div class="req-card reveal"><small>NOT NEEDED</small><b>No TPM 2.0</b><span>No Microsoft account, no licence key.</span></div>
+      </div>
+      <p class="new-more reveal"><a class="text-link" href="./download.html#requirements">Full system requirements <span aria-hidden="true">→</span></a></p>
+    </section>
+
     <section class="section-wrap content-section privacy-section" id="privacy">
       <div class="privacy-mark" aria-hidden="true"><img src="./assets/sloth-logo.svg" alt=""></div>
-      <div class="privacy-copy"><p class="eyebrow">Your choice, always</p><h2>Sharing is<br><em>opt in.</em></h2><p>If enabled, Sloth OS reports a local hash of the app name, the GPU manufacturer, a compatibility setting, the outcome, and a random machine ID. The app name itself is not sent. Sharing can be changed in Sloth Center.</p><a class="text-link" href="./privacy.html">Read the privacy details <span aria-hidden="true">→</span></a></div>
-      <div class="privacy-points"><p><span>✓</span> Opt-in sharing</p><p><span>✓</span> No files or usage times</p><p><span>✓</span> Downloads are separate from reports</p></div>
+      <div class="privacy-copy reveal"><p class="eyebrow">Your choice, always</p><h2>Sharing is<br><em>opt in.</em></h2><p>If enabled, Sloth OS reports a local hash of the app name, the GPU manufacturer, a compatibility setting, the outcome, and a random machine ID. The app name itself is not sent. Sharing can be changed in Sloth Center.</p><a class="text-link" href="./privacy.html">Read the privacy details <span aria-hidden="true">→</span></a></div>
+      <div class="privacy-points reveal"><p><span>✓</span> Opt-in sharing</p><p><span>✓</span> No files or usage times</p><p><span>✓</span> Downloads are separate from reports</p></div>
     </section>
 
     <section class="release-section">
       <div class="section-wrap release-card">
-        <div><p class="eyebrow">Sloth OS 1.6</p><h2>Ready to try.<br>Free to keep.</h2><p>Download one file, write it to a USB stick, and try Sloth OS without changing anything on your computer. Installing on a whole disk is tested on real computers; installing next to Windows and NVIDIA computers still need more real-world reports, and older BIOS-only PCs are not supported yet.</p><a class="button button-primary" href="./download.html">Download <span aria-hidden="true">↓</span></a><a class="button button-primary" href="https://distrowatch.com/dwres.php?resource=links#new" rel="noopener">Recommend on DistroWatch ↗</a></div>
-        <div class="release-status"><span class="status-ring"><i></i></span><small>PROJECT STATUS</small><b>Sloth OS 2.0 is rolling out</b><span class="status-rule"></span><a href="https://github.com/Sloth-OS-Linux/sloth-os">Follow progress on GitHub ↗</a></div>
+        <div class="reveal"><p class="eyebrow">Sloth OS 2.0</p><h2>Ready to try.<br>Free to keep.</h2><p>Download one file, write it to a USB stick, and try Sloth OS without changing anything on your computer. Whole-disk installs are tested on real computers, an older BIOS-mode laptop among them; installing next to Windows and NVIDIA computers still need more real-world reports.</p><a class="button button-primary" href="./download.html">Download <span aria-hidden="true">↓</span></a><a class="button button-quiet" href="https://distrowatch.com/dwres.php?resource=links#new" rel="noopener">Recommend on DistroWatch ↗</a></div>
+        <div class="release-status reveal"><span class="status-ring"><i></i></span><small>PROJECT STATUS</small><b>Sloth OS 2.0 is out</b><span class="status-rule"></span><a href="https://github.com/Sloth-OS-Linux/sloth-os">Follow progress on GitHub ↗</a></div>
       </div>
     </section>
 
     <section class="section-wrap content-section docs-section">
-      <div class="section-heading section-heading-row"><div><p class="eyebrow">The useful details</p><h2>Start with a guide.</h2></div><span><a class="text-link" href="./press.html">Press kit →</a> &nbsp;·&nbsp; <a class="text-link" href="https://github.com/Sloth-OS-Linux/sloth-os">Source code ↗</a></span></div>
+      <div class="section-heading section-heading-row reveal"><div><p class="eyebrow">The useful details</p><h2>Start with a guide.</h2></div><span><a class="text-link" href="./press.html">Press kit →</a> &nbsp;·&nbsp; <a class="text-link" href="https://github.com/Sloth-OS-Linux/sloth-os">Source code ↗</a></span></div>
       <div class="guide-grid">
-        <a class="guide-card" href="./getting-started.html"><span class="guide-icon">↗</span><small>FIRST STEPS</small><b>Getting started</b><span>The first start, the Welcome wizard, apps and updates.</span><i>Read guide →</i></a>
-        <a class="guide-card" href="./windows-apps.html"><span class="guide-icon">⌘</span><small>APPS & GAMES</small><b>Windows programs</b><span>How the compatibility handler is meant to work, and its limits.</span><i>Read guide →</i></a>
-        <a class="guide-card" href="./privacy.html"><span class="guide-icon">◎</span><small>YOUR DATA</small><b>Privacy</b><span>A plain-language breakdown of optional sharing.</span><i>Read guide →</i></a>
-        <a class="guide-card" href="./faq.html"><span class="guide-icon">?</span><small>QUICK ANSWERS</small><b>FAQ</b><span>Downloads, compatibility, updates and project status.</span><i>Read answers →</i></a>
+        <a class="guide-card reveal" href="./getting-started.html"><span class="guide-icon">↗</span><small>FIRST STEPS</small><b>Getting started</b><span>The first start, the Welcome wizard, apps and updates.</span><i>Read guide →</i></a>
+        <a class="guide-card reveal" href="./windows-apps.html"><span class="guide-icon">⌘</span><small>APPS & GAMES</small><b>Windows programs</b><span>How the compatibility handler works, and its limits.</span><i>Read guide →</i></a>
+        <a class="guide-card reveal" href="./privacy.html"><span class="guide-icon">◎</span><small>YOUR DATA</small><b>Privacy</b><span>A plain-language breakdown of optional sharing.</span><i>Read guide →</i></a>
+        <a class="guide-card reveal" href="./faq.html"><span class="guide-icon">?</span><small>QUICK ANSWERS</small><b>FAQ</b><span>Downloads, compatibility, updates and project status.</span><i>Read answers →</i></a>
       </div>
     </section>
   </main>
+
+  <dialog class="lightbox" aria-label="Enlarged picture"><button class="lightbox-close" type="button" aria-label="Close">×</button><img src="" alt=""></dialog>
 
   <footer class="site-footer"><div class="section-wrap footer-inner"><a class="brand" href="./index.html"><img class="brand-logo" src="./assets/sloth-logo.svg" alt=""><span>Sloth OS</span></a><span>Created by ZsLoth · © 2026</span><nav aria-label="Footer"><a href="https://ko-fi.com/slothos">Buy us a beer 🍺</a><a href="./getting-started.html">Guides</a><a href="./privacy.html">Privacy</a><a href="https://github.com/Sloth-OS-Linux/sloth-os/discussions">Community ↗</a><a href="https://github.com/Sloth-OS-Linux/sloth-os">GitHub ↗</a></nav></div></footer>
 </body>
