@@ -73,3 +73,108 @@ document.documentElement.classList.add("js-ready");
     setTimeout(show, 3000);
   }
 })();
+
+/* The home page (Sloth OS 2.0): the taskbar layouts one after the other with buttons to pick one, the Sloth Center
+   tour's tabs, pictures that open larger, and sections that fade in as they come into view. Without JavaScript the
+   first layout and every tour picture simply show; with reduced motion nothing moves by itself. */
+(function () {
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function ready(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn); else fn();
+  }
+  ready(function () {
+    // --- the layouts
+    var show = document.querySelector("[data-layout-show]");
+    if (show) {
+      var imgs = Array.prototype.slice.call(show.querySelectorAll(".layout-screen img"));
+      var chips = show.querySelector("[data-layout-chips]");
+      var current = 0, timer = null, paused = false;
+      var buttons = imgs.map(function (img, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = img.getAttribute("data-name");
+        b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+        b.addEventListener("click", function () { go(i); stop(); });
+        chips.appendChild(b);
+        return b;
+      });
+      function go(i) {
+        imgs[current].classList.remove("is-active");
+        buttons[current].setAttribute("aria-pressed", "false");
+        current = i;
+        imgs[i].loading = "eager";
+        imgs[i].classList.add("is-active");
+        buttons[i].setAttribute("aria-pressed", "true");
+      }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      function start() {
+        if (still || timer) return;
+        timer = setInterval(function () { if (!paused && !document.hidden) go((current + 1) % imgs.length); }, 3200);
+      }
+      show.addEventListener("mouseenter", function () { paused = true; });
+      show.addEventListener("mouseleave", function () { paused = false; });
+      show.addEventListener("focusin", function () { paused = true; });
+      show.addEventListener("focusout", function () { paused = false; });
+      // the next pictures load while the first one shows
+      setTimeout(function () { imgs.forEach(function (img) { img.loading = "eager"; }); }, 1500);
+      start();
+    }
+
+    // --- the tour's tabs (arrow keys move between them, as in a desktop app)
+    var tour = document.querySelector("[data-tour]");
+    if (tour) {
+      var tabs = Array.prototype.slice.call(tour.querySelectorAll("[role=tab]"));
+      function select(tab) {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+        });
+      }
+      tabs.forEach(function (tab, i) {
+        tab.addEventListener("click", function () { select(tab); });
+        tab.addEventListener("keydown", function (e) {
+          var n = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+          if (!n) return;
+          e.preventDefault();
+          var next = tabs[(i + n + tabs.length) % tabs.length];
+          select(next);
+          next.focus();
+        });
+      });
+    }
+
+    // --- "moving in": the picture turns into the finished one now and then
+    var pair = document.querySelector(".new-shot-pair");
+    if (pair && !still) setInterval(function () { pair.classList.toggle("show-after"); }, 3500);
+
+    // --- pictures that open larger
+    var box = document.querySelector(".lightbox");
+    if (box && typeof box.showModal === "function") {
+      var big = box.querySelector("img");
+      document.querySelectorAll("[data-zoom]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          var img = el.querySelector("img");
+          big.src = el.getAttribute("data-zoom");
+          big.alt = img ? img.alt : "";
+          box.showModal();
+        });
+      });
+      box.addEventListener("click", function () { box.close(); });
+    }
+
+    // --- sections fade in as they come into view
+    var items = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window) || still) {
+      items.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var seen = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); seen.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    items.forEach(function (el) { seen.observe(el); });
+  });
+})();
