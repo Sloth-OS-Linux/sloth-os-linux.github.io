@@ -209,8 +209,8 @@ document.documentElement.classList.add("js-ready");
   Promise.all([downloads, visits]).then(function (n) {
     ready(function () {
       var parts = [];
-      if (n[0]) parts.push(fmt(n[0]) + " downloads");
-      if (n[1]) parts.push(fmt(n[1]) + " visitors");
+      if (n[0]) parts.push(fmt(n[0]) + (n[0] === 1 ? " download" : " downloads"));
+      if (n[1]) parts.push(fmt(n[1]) + (n[1] === 1 ? " visitor" : " visitors"));
       if (parts.length) {
         var line = document.createElement("span");
         line.className = "site-stats";
