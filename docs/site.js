@@ -214,7 +214,7 @@ document.documentElement.classList.add("js-ready");
     while (digits.length < 4) digits.unshift("0");
     var label = fmt(count) + (count === 1 ? " visitor" : " visitors");
     var strip = "";
-    for (var d = 0; d <= 9; d++) strip += "<b>" + d + "</b>";
+    for (var d = 0; d <= 9; d++) strip += '<span class="tally-digit">' + d + "</span>";
     var wheels = digits.map(function () {
       return '<span class="tally-wheel"><span class="tally-strip">' + strip + "</span></span>";
     }).join("");
