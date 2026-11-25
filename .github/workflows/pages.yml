@@ -50,6 +50,10 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: docs
+      - name: Let the uploaded site show up
+        # deploy-pages looked for it a second after the upload and found nothing (2026-11-25, twice): the
+        # artifact list takes a moment to include a new upload
+        run: sleep 20
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
