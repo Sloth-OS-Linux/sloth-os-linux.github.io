@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./favicon.svg?v=sloth-black-icon-20261016" type="image/svg+xml">
   <link rel="preload" as="image" href="./assets/shots/v2/layout-windows11.webp" type="image/webp">
-  <link rel="stylesheet" href="./site.css?v=sloth-20-20261118">
-  <script src="./site.js?v=sloth-20-20261118" defer></script>
+  <link rel="stylesheet" href="./site.css?v=sloth-20-20261125">
+  <script src="./site.js?v=sloth-20-20261125" defer></script>
 </head>
 <body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@
       <span>Sloth OS</span>
     </a>
     <nav class="main-nav" aria-label="Main navigation"><a href="./download.html">Download</a>
-      <a href="#new">What’s new</a><a href="#sloth-center">Sloth Center</a><a href="#windows-apps">Windows apps</a><a href="#requirements">Requirements</a><a href="./getting-started.html">Guides</a>
+      <a href="#new">What’s new</a><a href="#sloth-center">Sloth Center</a><a href="#windows-apps">Windows apps</a><a href="#will-it-run">Will it run?</a><a href="#requirements">Requirements</a><a href="./getting-started.html">Guides</a>
     <a href="https://github.com/Sloth-OS-Linux/sloth-os/discussions">Community ↗</a></nav>
     <a class="nav-cta" href="https://github.com/Sloth-OS-Linux/sloth-os">View on GitHub ↗</a>
   </header>
@@ -112,21 +112,25 @@
     <section class="section-wrap content-section" id="sloth-center">
       <div class="section-heading reveal"><p class="eyebrow">Sloth Center</p><h2>Every setting,<br><em>one window.</em></h2><p>Sloth Center sits on the taskbar next to the file manager and the app store. Anything you would otherwise do in a terminal has a button here. Take a look around:</p></div>
       <div class="tour reveal" data-tour>
-        <div class="tour-tabs" role="tablist" aria-label="Sloth Center pages">
-          <button type="button" role="tab" id="tab-updates" aria-controls="panel-updates" aria-selected="true">Updates</button>
-          <button type="button" role="tab" id="tab-apps" aria-controls="panel-apps" aria-selected="false" tabindex="-1">Apps</button>
-          <button type="button" role="tab" id="tab-games" aria-controls="panel-games" aria-selected="false" tabindex="-1">Games</button>
-          <button type="button" role="tab" id="tab-appearance" aria-controls="panel-appearance" aria-selected="false" tabindex="-1">Appearance</button>
-          <button type="button" role="tab" id="tab-disks" aria-controls="panel-disks" aria-selected="false" tabindex="-1">Disks</button>
-          <button type="button" role="tab" id="tab-feedback" aria-controls="panel-feedback" aria-selected="false" tabindex="-1">Feedback</button>
+        <div class="tour-list" role="tablist" aria-label="Sloth Center pages" aria-orientation="vertical">
+          <button type="button" role="tab" id="tab-updates" aria-controls="panel-updates" aria-selected="true" data-glow="143,176,207"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 0 1-14.8 5.7M3.5 12A8.5 8.5 0 0 1 18.3 6.3"/><path d="M18.5 2.5v4h-4M5.5 21.5v-4h4"/></svg></span><span class="tour-name">Updates<small>Signed, quiet, one click back</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
+          <button type="button" role="tab" id="tab-apps" aria-controls="panel-apps" aria-selected="false" tabindex="-1" data-glow="180,185,192"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg></span><span class="tour-name">Apps<small>Everything installed, in one list</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
+          <button type="button" role="tab" id="tab-games" aria-controls="panel-games" aria-selected="false" tabindex="-1" data-glow="127,214,160"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.3 5.5H6.7a3.8 3.8 0 0 0-3.7 3.1l-1 5.2a2.9 2.9 0 0 0 5.2 2.2L8.6 14h6.8l1.4 2a2.9 2.9 0 0 0 5.2-2.2l-1-5.2a3.8 3.8 0 0 0-3.7-3.1z"/><path d="M6.5 10.5h3M8 9v3"/><circle cx="15.5" cy="10.5" r=".9"/></svg></span><span class="tour-name">Games<small>Library, Game mode, TV mode</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
+          <button type="button" role="tab" id="tab-appearance" aria-controls="panel-appearance" aria-selected="false" tabindex="-1" data-glow="196,160,224"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 0 0 5-5C21 6.4 17 3 12 3z"/><circle cx="7.5" cy="11.5" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="15" cy="7.8" r="1"/></svg></span><span class="tour-name">Appearance<small>7 taskbars, 13 color schemes</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
+          <button type="button" role="tab" id="tab-disks" aria-controls="panel-disks" aria-selected="false" tabindex="-1" data-glow="240,199,94"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M5 13l2.4-7.5h9.2L19 13"/><circle cx="17" cy="16.5" r=".9"/></svg></span><span class="tour-name">Disks<small>Space, health, network folders</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
+          <button type="button" role="tab" id="tab-feedback" aria-controls="panel-feedback" aria-selected="false" tabindex="-1" data-glow="242,155,92"><span class="tour-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg></span><span class="tour-name">Feedback<small>Plain words, nothing hidden</small></span><span class="tour-bar" aria-hidden="true"><i></i></span></button>
         </div>
-        <div class="tour-panels">
-          <figure class="tour-panel" role="tabpanel" id="panel-updates" aria-labelledby="tab-updates"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-updates.webp" aria-label="Enlarge: the Updates page"><img src="./assets/shots/v2/center-updates.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Updates page: Your system is up to date, Sloth OS 2.0, the list of what is new in 2.0, app updates and computer firmware."></button><figcaption><b>Updates</b> The system updates itself in the background as one piece and only accepts images signed by Sloth OS. What is new shows right here, and the previous version is one click away.</figcaption></figure>
-          <figure class="tour-panel" role="tabpanel" id="panel-apps" aria-labelledby="tab-apps" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-apps.webp" aria-label="Enlarge: the Apps page"><img src="./assets/shots/v2/center-apps.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Apps page: Discord, Firefox, GIMP, Heroic, LibreOffice, LocalSend, Spotify, Steam, Thunderbird, VLC and more, each with Open and Remove."></button><figcaption><b>Apps</b> Every installed app in one list, with Open and Remove. Apps update themselves once a day, and Get more apps opens the store.</figcaption></figure>
-          <figure class="tour-panel" role="tabpanel" id="panel-games" aria-labelledby="tab-games" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-games.webp" aria-label="Enlarge: the Games page"><img src="./assets/shots/v2/center-games.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Games page: the game library with Play buttons, Game mode and TV mode."></button><figcaption><b>Games</b> Every game in one library with a Play button, per-game FPS display and upscaling, Game mode, TV mode and “Will it run?”.</figcaption></figure>
-          <figure class="tour-panel" role="tabpanel" id="panel-appearance" aria-labelledby="tab-appearance" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-appearance.webp" aria-label="Enlarge: the Appearance page"><img src="./assets/shots/v2/center-appearance.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Appearance page: seven taskbar layouts to click, and the color schemes below."></button><figcaption><b>Appearance</b> Seven taskbar layouts and thirteen color schemes, applied the moment you click. Your pinned apps stay where they are.</figcaption></figure>
-          <figure class="tour-panel" role="tabpanel" id="panel-disks" aria-labelledby="tab-disks" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-disks-windows.webp" aria-label="Enlarge: the Disks page"><img src="./assets/shots/v2/center-disks-windows.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Disks page: networks, Delete unneeded files, and Bring files over from Windows."></button><figcaption><b>Disks</b> What uses the space, the disks’ health, network folders, sharing a folder with the computers at home, cleaning up, and bringing files over from Windows.</figcaption></figure>
-          <figure class="tour-panel" role="tabpanel" id="panel-feedback" aria-labelledby="tab-feedback" hidden><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-feedback.webp" aria-label="Enlarge: the Feedback page"><img src="./assets/shots/v2/center-feedback.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Feedback page: problem, idea or other, a box to describe what happened, and Show what is sent."></button><figcaption><b>Feedback</b> Tell the developers what went wrong in your own words. Personal details are hidden, and you can see exactly what is sent.</figcaption></figure>
+        <div class="tour-stage">
+          <span class="tour-glow" aria-hidden="true"></span>
+          <div class="tour-titlebar" aria-hidden="true"><img src="./assets/sloth-logo.svg" alt=""><span>Sloth Center</span><b data-tour-title>Updates</b><span class="tour-controls"><i></i><i></i><i></i></span></div>
+          <div class="tour-panels">
+            <figure class="tour-panel is-active" role="tabpanel" id="panel-updates" aria-labelledby="tab-updates"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-updates.webp" aria-label="Enlarge: the Updates page"><img src="./assets/shots/v2/center-updates.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Updates page: Your system is up to date, Sloth OS 2.0, the list of what is new in 2.0, app updates and computer firmware."></button><figcaption>The system updates itself in the background as one piece and only accepts images signed by Sloth OS. What is new shows right here, and the previous version is one click away.</figcaption></figure>
+            <figure class="tour-panel" role="tabpanel" id="panel-apps" aria-labelledby="tab-apps"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-apps.webp" aria-label="Enlarge: the Apps page"><img src="./assets/shots/v2/center-apps.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Apps page: Discord, Firefox, GIMP, Heroic, LibreOffice, LocalSend, Spotify, Steam, Thunderbird, VLC and more, each with Open and Remove."></button><figcaption>Every installed app in one list, with Open and Remove. Apps update themselves once a day, and Get more apps opens the store.</figcaption></figure>
+            <figure class="tour-panel" role="tabpanel" id="panel-games" aria-labelledby="tab-games"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-games.webp" aria-label="Enlarge: the Games page"><img src="./assets/shots/v2/center-games.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Games page: the game library with Play buttons, Game mode and TV mode."></button><figcaption>Every game in one library with a Play button, per-game FPS display and upscaling, Game mode, TV mode and “Will it run?”.</figcaption></figure>
+            <figure class="tour-panel" role="tabpanel" id="panel-appearance" aria-labelledby="tab-appearance"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-appearance.webp" aria-label="Enlarge: the Appearance page"><img src="./assets/shots/v2/center-appearance.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Appearance page: seven taskbar layouts to click, and the color schemes below."></button><figcaption>Seven taskbar layouts and thirteen color schemes, applied the moment you click. Your pinned apps stay where they are.</figcaption></figure>
+            <figure class="tour-panel" role="tabpanel" id="panel-disks" aria-labelledby="tab-disks"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-disks-windows.webp" aria-label="Enlarge: the Disks page"><img src="./assets/shots/v2/center-disks-windows.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Disks page: networks, Delete unneeded files, and Bring files over from Windows."></button><figcaption>What uses the space, the disks’ health, network folders, sharing a folder with the computers at home, cleaning up, and bringing files over from Windows.</figcaption></figure>
+            <figure class="tour-panel" role="tabpanel" id="panel-feedback" aria-labelledby="tab-feedback"><button class="tour-shot" type="button" data-zoom="./assets/shots/v2/center-feedback.webp" aria-label="Enlarge: the Feedback page"><img src="./assets/shots/v2/center-feedback.webp" width="1010" height="684" loading="lazy" alt="Sloth Center, Feedback page: problem, idea or other, a box to describe what happened, and Show what is sent."></button><figcaption>Tell the developers what went wrong in your own words. Personal details are hidden, and you can see exactly what is sent.</figcaption></figure>
+          </div>
         </div>
       </div>
       <div class="feature-grid feature-grid-tight">
@@ -145,6 +149,32 @@
           <div class="flow-row"><span class="flow-step">03</span><span class="flow-icon">↻</span><div><b>Remember what works</b><small>Return to a known working version</small></div><span class="flow-check">✓</span></div>
           <div class="flow-foot">No technical words on the way: you see the program’s name, a progress bar and a plain sentence.</div>
         </div>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="will-it-run">
+      <div class="section-heading reveal"><p class="eyebrow">Will my game run?</p><h2>Look up your games.<br><em>Before you switch.</em></h2><p>The same list as “Will it run?” in Sloth Center: thousands of players’ reports from ProtonDB, the anti-cheat list of AreWeAntiCheatYet and the Sloth OS team’s own tests.</p></div>
+      <div class="gc reveal" data-game-check>
+        <div class="gc-search">
+          <label class="gc-field" for="gc-input"><svg class="gc-glass" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sr-only">Game name</span><input id="gc-input" type="search" role="combobox" aria-expanded="false" aria-controls="gc-results" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Type a game, for example Cyberpunk 2077"><kbd aria-hidden="true">/</kbd></label>
+          <div class="gc-try" role="group" aria-label="Try a game"><span>Try</span><button type="button">Cyberpunk 2077</button><button type="button">Elden Ring</button><button type="button">Counter-Strike 2</button><button type="button">Baldur’s Gate 3</button><button type="button">Grand Theft Auto V</button><button type="button">Fortnite</button><button type="button">Roblox</button></div>
+        </div>
+        <div class="gc-body">
+          <ul class="gc-results" id="gc-results" role="listbox" aria-label="Games found"></ul>
+          <div class="gc-detail" aria-live="polite">
+            <div class="gc-empty">
+              <p class="gc-empty-title"><b data-gc-count>Over 20,000</b> games in the list</p>
+              <ul class="gc-legend">
+                <li class="is-great"><i></i><b>Runs well</b><span>At least 85% of players say it works</span></li>
+                <li class="is-ok"><i></i><b>Runs, but may have issues</b><span>At least half of them say it works</span></li>
+                <li class="is-poor"><i></i><b>Often doesn’t start</b><span>Fewer than half say it works</span></li>
+                <li class="is-bad"><i></i><b>Blocked</b><span>Its makers or its anti-cheat keep Linux out</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="gc-note">Sources: <a href="https://www.protondb.com" rel="noopener">ProtonDB</a> (ODbL 1.0), <a href="https://areweanticheatyet.com" rel="noopener">AreWeAntiCheatYet</a> (MIT) and the Sloth OS team’s tests, updated every month. The list loads from the <a href="https://github.com/Sloth-OS-Linux/sloth-os-knowledge">Sloth OS knowledge repository</a> on GitHub.</p>
+        <noscript><p class="gc-note">The search needs JavaScript. The same check is in Sloth Center → Games → Will it run?, offline too.</p></noscript>
       </div>
     </section>
 
