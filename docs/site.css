@@ -264,3 +264,29 @@ html:not(.js-ready) .tour-panels{display:grid;gap:22px}
 .site-stats{color:#8b9199;white-space:nowrap}
 .download-count{margin:.8rem 0 0;color:#8b9199;font-size:.78rem}
 @media(max-width:600px){.site-stats{order:4;width:100%}}
+.tally-spot{margin-top:1.6rem;text-align:center}.tally-spot.tally-left{text-align:left;margin-top:1rem}
+.tally{display:inline-block;position:relative;padding-top:38px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.tally-ring,.tally-plunger,.tally-body,.tally-knob,.tally-screw,.tally-wheel{display:block}
+.tally:focus-visible{outline:2px solid #e3e5e8;outline-offset:6px;border-radius:12px}
+.tally-ring{position:absolute;top:2px;right:30px;width:54px;height:40px;border:5px solid #c9cdd3;border-bottom:0;border-radius:28px 28px 0 0;box-shadow:inset 0 2px 1px rgba(255,255,255,.6)}
+.tally-ring:after{content:"";position:absolute;right:-12px;top:-6px;width:16px;height:16px;border-radius:5px;background:#1b1c1e;transform:rotate(35deg)}
+.tally-plunger{position:absolute;top:8px;left:36px;width:44px;height:36px;transform-origin:50% 100%;transition:transform .09s ease-in}
+.tally-plunger:before{content:"";position:absolute;left:17px;top:12px;width:10px;height:26px;background:linear-gradient(90deg,#8d939b,#eef1f4 45%,#9aa0a8)}
+.tally-plunger:after{content:"";position:absolute;left:0;top:0;width:44px;height:18px;border-radius:50%;background:radial-gradient(ellipse at 40% 35%,#ffffff 0%,#d9dde2 45%,#8e949c 100%);box-shadow:0 3px 4px rgba(0,0,0,.35)}
+.tally.is-pressed .tally-plunger{transform:translateY(7px) scaleY(.92)}
+.tally-body{position:relative;width:176px;height:118px;border-radius:30px 30px 40px 40px;background:linear-gradient(135deg,#fbfcfd 0%,#c3c8ce 30%,#f2f4f6 52%,#9aa0a8 78%,#d7dbe0 100%);box-shadow:inset 0 3px 3px rgba(255,255,255,.9),inset 0 -8px 14px rgba(0,0,0,.35),0 16px 30px rgba(0,0,0,.5)}
+.tally-window{position:absolute;left:14px;top:26px;display:flex;gap:4px;padding:7px 8px;border-radius:9px;background:#0d0e10;border:3px solid #050506;box-shadow:inset 0 3px 6px rgba(0,0,0,.9),0 2px 0 rgba(255,255,255,.5)}
+.tally-wheel{position:relative;width:20px;height:34px;overflow:hidden;border-radius:7px;background:linear-gradient(#9ea3a9,#ffffff 30%,#ffffff 70%,#9ea3a9)}
+.tally-wheel:after{content:"";position:absolute;inset:0;border-radius:7px;box-shadow:inset 0 5px 6px -3px rgba(0,0,0,.55),inset 0 -5px 6px -3px rgba(0,0,0,.55)}
+.tally-strip{display:block;transition:transform 1.5s cubic-bezier(.2,.75,.25,1)}
+.tally-strip b{display:block;height:34px;line-height:34px;text-align:center;font:700 22px/34px "Courier New",ui-monospace,monospace;color:#141518}
+.tally-knob{position:absolute;right:-12px;top:44px;width:34px;height:34px;border-radius:50%;background:repeating-conic-gradient(#1a1b1d 0 10deg,#3a3c40 10deg 20deg);box-shadow:inset 0 0 0 7px rgba(0,0,0,.25),0 3px 6px rgba(0,0,0,.45)}
+.tally-knob:after{content:"";position:absolute;left:12px;top:12px;width:10px;height:10px;border-radius:50%;background:#0c0d0e}
+.tally-screw{position:absolute;width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#9aa0a8);box-shadow:0 1px 1px rgba(0,0,0,.4)}
+.tally-screw:before,.tally-screw:after{content:"";position:absolute;left:5px;top:1px;width:1px;height:9px;background:#5d6168;transform:rotate(45deg)}
+.tally-screw:after{transform:rotate(-45deg)}
+.tally-screw.s1{right:22px;top:12px}.tally-screw.s2{right:30px;bottom:12px}
+.tally-caption{margin:.7rem 0 0;color:#9aa0a7;font-size:.78rem}
+.tally.is-shaking .tally-body{animation:tally-shake .35s ease-in-out}
+@keyframes tally-shake{0%,100%{transform:none}30%{transform:rotate(-2deg)}70%{transform:rotate(1.5deg)}}
+@media(prefers-reduced-motion:reduce){.tally-strip{transition:none}.tally-plunger{transition:none}.tally.is-shaking .tally-body{animation:none}}

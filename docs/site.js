@@ -206,6 +206,67 @@ document.documentElement.classList.add("js-ready");
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) { return d && d.downloads > 0 ? d.downloads : null; })
     .catch(function () { return null; });
+  /* The visitor number on a hand tally counter: the wheels roll up from 0000 to it, then the plunger clicks.
+     Pressing it clicks again (it does not count anyone: the service counts each visitor once a day). */
+  function tally(spot, count) {
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var digits = String(count).split("");
+    while (digits.length < 4) digits.unshift("0");
+    var label = fmt(count) + (count === 1 ? " visitor" : " visitors");
+    var strip = "";
+    for (var d = 0; d <= 9; d++) strip += "<b>" + d + "</b>";
+    var wheels = digits.map(function () {
+      return '<span class="tally-wheel"><span class="tally-strip">' + strip + "</span></span>";
+    }).join("");
+    spot.innerHTML = '<div class="tally" role="button" tabindex="0" aria-label="' + label + '">' +
+      '<span class="tally-ring"></span><span class="tally-plunger"></span>' +
+      '<span class="tally-body"><span class="tally-window" aria-hidden="true">' + wheels + "</span>" +
+      '<span class="tally-knob"></span><span class="tally-screw s1"></span><span class="tally-screw s2"></span>' +
+      "</span></div>" + '<p class="tally-caption">' + label + " so far</p>";
+    spot.hidden = false;
+    var counter = spot.querySelector(".tally");
+    // wider for a five- or six-digit number, so the reset knob stays clear of the window
+    spot.querySelector(".tally-body").style.width = (80 + 24 * digits.length) + "px";
+    var strips = spot.querySelectorAll(".tally-strip");
+    function click() {
+      counter.classList.add("is-pressed");
+      setTimeout(function () { counter.classList.remove("is-pressed"); }, 140);
+    }
+    function roll() {
+      Array.prototype.forEach.call(strips, function (s, i) {
+        s.style.transitionDelay = still ? "0s" : (i * 0.12) + "s";
+        s.style.transform = "translateY(" + (-34 * Number(digits[i])) + "px)";
+      });
+      if (!still) setTimeout(click, 1500 + strips.length * 120);
+    }
+    // the wheels roll when the counter comes into view: at once if it is on the screen already, otherwise when a
+    // quarter of it shows; in any case after 5 s, so the number never stays at 0000 (a fading section can keep the
+    // observer from firing)
+    var rolled = false;
+    function rollOnce() { if (!rolled) { rolled = true; roll(); } }
+    var box = counter.getBoundingClientRect();
+    if (still || !("IntersectionObserver" in window) || (box.top < window.innerHeight && box.bottom > 0)) {
+      setTimeout(rollOnce, still ? 0 : 400);
+    } else {
+      var seen = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { seen.disconnect(); setTimeout(rollOnce, 150); }
+      }, { threshold: 0.25 });
+      seen.observe(counter);
+      setTimeout(function () { seen.disconnect(); rollOnce(); }, 5000);
+    }
+    function press() {
+      click();
+      if (still) return;
+      counter.classList.remove("is-shaking");
+      void counter.offsetWidth;
+      counter.classList.add("is-shaking");
+    }
+    counter.addEventListener("click", press);
+    counter.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); press(); }
+    });
+  }
+
   Promise.all([downloads, visits]).then(function (n) {
     ready(function () {
       var parts = [];
@@ -217,6 +278,11 @@ document.documentElement.classList.add("js-ready");
         line.textContent = parts.join(" \u00b7 ");
         var footer = document.querySelector(".footer-inner nav");
         if (footer) footer.parentNode.insertBefore(line, footer);
+      }
+      if (n[1]) {
+        Array.prototype.forEach.call(document.querySelectorAll("[data-visitors]"), function (el) {
+          tally(el, n[1]);
+        });
       }
       if (n[0]) {
         Array.prototype.forEach.call(document.querySelectorAll("[data-downloads]"), function (el) {
