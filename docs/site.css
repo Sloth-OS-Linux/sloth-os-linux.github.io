@@ -261,3 +261,6 @@ html:not(.js-ready) .tour-panels{display:grid;gap:22px}
 @media(max-width:600px){.new-grid,.req-grid,.quick-facts-4{grid-template-columns:1fr}.new-wide{grid-column:auto}.release-pill{font-size:.68rem}.layout-show{padding:8px}.tour{padding:10px}.tour-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.tour-tabs button{white-space:nowrap}.release-card .button-quiet{margin:.6rem 0 0}.layout-show figcaption{justify-content:flex-start}}
 @media(prefers-reduced-motion:reduce){.js-ready .reveal{opacity:1;transform:none}.layout-screen img{transition:none}}
 .main-nav a{white-space:nowrap}
+.site-stats{color:#8b9199;white-space:nowrap}
+.download-count{margin:.8rem 0 0;color:#8b9199;font-size:.78rem}
+@media(max-width:600px){.site-stats{order:4;width:100%}}

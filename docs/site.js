@@ -1,12 +1,13 @@
 document.documentElement.classList.add("js-ready");
 
-/* A card asking for a DistroWatch recommendation: a sloth giving a thumbs-up, bouncing back and forth along the
-   bottom of the window until someone presses Recommend (gone for good) or the X (gone for two weeks). It stops
-   while the pointer or the keyboard focus is on it, and stays still in the corner with reduced motion. */
+/* A card asking for a rating on DistroWatch (Sloth OS has its own page there since November 2026): a sloth giving a
+   thumbs-up, bouncing back and forth along the bottom of the window until someone presses Rate (gone for good) or
+   the X (gone for two weeks). It stops while the pointer or the keyboard focus is on it, and stays still in the corner
+   with reduced motion. Its own key: who pressed the earlier "Recommend" card sees this one once too. */
 (function () {
-  var KEY = "sloth-distrowatch";
+  var KEY = "sloth-distrowatch-rate";
   var LATER = 14 * 24 * 3600 * 1000;
-  var URL = "https://distrowatch.com/dwres.php?resource=links#new";
+  var URL = "https://distrowatch.com/dwres.php?resource=ratings&distro=sloth";
   function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) { /* private window: shown again next time */ } }
   var seen = get();
@@ -50,14 +51,14 @@ document.documentElement.classList.add("js-ready");
     document.head.appendChild(style);
     var card = document.createElement("aside");
     card.className = "dw-card";
-    card.setAttribute("aria-label", "Recommend Sloth OS on DistroWatch");
+    card.setAttribute("aria-label", "Rate Sloth OS on DistroWatch");
     card.innerHTML = '<div class="dw-body"><span class="dw-sloth" aria-hidden="true">' +
       '<img src="./assets/sloth-logo.svg" alt=""><span>\u{1F44D}</span></span>' +
       '<button class="dw-x" type="button" aria-label="Close">\u00d7</button>' +
-      "<p><strong>Like Sloth OS?</strong>Please help spread the idea: find Sloth OS in DistroWatch\u2019s waiting " +
-      "list and press <em>Recommend</em>. It takes ten seconds and means a lot to me.</p>" +
+      "<p><strong>Sloth OS is on DistroWatch!</strong>If you like it, please give it a rating and a few words " +
+      "there. It helps others decide whether to try it, and it means a lot to me.</p>" +
       '<a class="button button-primary" href="' + URL + '" target="_blank" rel="noopener">' +
-      "Recommend on DistroWatch \u2197</a></div>";
+      "Rate Sloth OS on DistroWatch \u2197</a></div>";
     document.body.appendChild(card);
     function close(value) {
       set(value);
@@ -176,5 +177,53 @@ document.documentElement.classList.add("js-ready");
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     items.forEach(function (el) { seen.observe(el); });
+  });
+})();
+
+/* Counters: the downloads (stats.json, from SourceForge's public download numbers, written by the Pages workflow
+   every day) and the visitors (the knowledge Worker counts each visitor once a day, without a cookie: privacy.html).
+   A line in every footer, and the download count next to the download buttons ([data-downloads]). Nothing shows
+   if a number cannot be had. The browser remembers only the day it was counted (localStorage), to ask for the
+   number instead of counting again. */
+(function () {
+  var API = "https://sloth-os-knowledge.slothos.workers.dev";
+  var KEY = "sloth-visit-day";
+  var day = new Date().toISOString().slice(0, 10);
+  var counted = false;
+  try { counted = localStorage.getItem(KEY) === day; } catch (e) { /* private window: counted once a day anyway */ }
+  function fmt(n) { return Number(n).toLocaleString("en-US"); }
+  function ready(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn); else fn();
+  }
+  var visits = fetch(API + (counted ? "/v1/visits" : "/v1/visit"), counted ? {} : { method: "POST" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (d && !counted) { try { localStorage.setItem(KEY, day); } catch (e) { /* see above */ } }
+      return d && d.visits > 0 ? d.visits : null;
+    })
+    .catch(function () { return null; });
+  var downloads = fetch("./stats.json", { cache: "no-cache" })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) { return d && d.downloads > 0 ? d.downloads : null; })
+    .catch(function () { return null; });
+  Promise.all([downloads, visits]).then(function (n) {
+    ready(function () {
+      var parts = [];
+      if (n[0]) parts.push(fmt(n[0]) + " downloads");
+      if (n[1]) parts.push(fmt(n[1]) + " visitors");
+      if (parts.length) {
+        var line = document.createElement("span");
+        line.className = "site-stats";
+        line.textContent = parts.join(" \u00b7 ");
+        var footer = document.querySelector(".footer-inner nav");
+        if (footer) footer.parentNode.insertBefore(line, footer);
+      }
+      if (n[0]) {
+        Array.prototype.forEach.call(document.querySelectorAll("[data-downloads]"), function (el) {
+          el.textContent = "Downloaded " + fmt(n[0]) + " times so far";
+          el.hidden = false;
+        });
+      }
+    });
   });
 })();

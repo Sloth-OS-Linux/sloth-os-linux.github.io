@@ -6,6 +6,8 @@ on:
     paths:
       - "docs/**"
       - ".github/workflows/pages.yml"
+  schedule:
+    - cron: "17 5 * * *"   # every day: the download count (stats.json) stays fresh
   workflow_dispatch:
 
 permissions:
@@ -29,6 +31,21 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+      - name: Download count from SourceForge's public statistics
+        # stats.json in the repository is the fallback: if SourceForge does not answer, the last known number stays
+        run: |
+          end=$(date -u +%F)
+          if curl -fsSL --max-time 60 -o /tmp/sf.json \
+              "https://sourceforge.net/projects/sloth-os/files/stats/json?start_date=2026-10-21&end_date=$end"; then
+            python3 - "$end" <<'EOF'
+          import json, sys
+          total = json.load(open("/tmp/sf.json")).get("total")
+          if isinstance(total, int) and total > 0:
+              json.dump({"downloads": total, "since": "2026-10-21", "updated": sys.argv[1]},
+                        open("docs/stats.json", "w"), indent=1)
+              print("downloads:", total)
+          EOF
+          fi
       - name: Upload website
         uses: actions/upload-pages-artifact@v5
         with:
