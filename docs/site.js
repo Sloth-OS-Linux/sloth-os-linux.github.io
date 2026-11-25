@@ -180,8 +180,8 @@ document.documentElement.classList.add("js-ready");
   });
 })();
 
-/* Counters: the downloads (stats.json, from SourceForge's public download numbers, written by the Pages workflow
-   every day) and the visitors (the knowledge Worker counts each visitor once a day, without a cookie: privacy.html).
+/* Counters: the downloads (SourceForge's public download statistics, read live; stats.json, written by the Pages
+   workflow every day, if SourceForge does not answer) and the visitors (the knowledge Worker counts each visitor once a day, without a cookie: privacy.html).
    A line in every footer, and the download count next to the download buttons ([data-downloads]). Nothing shows
    if a number cannot be had. The browser remembers only the day it was counted (localStorage), to ask for the
    number instead of counting again. */
@@ -202,10 +202,20 @@ document.documentElement.classList.add("js-ready");
       return d && d.visits > 0 ? d.visits : null;
     })
     .catch(function () { return null; });
-  var downloads = fetch("./stats.json", { cache: "no-cache" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) { return d && d.downloads > 0 ? d.downloads : null; })
-    .catch(function () { return null; });
+  // the downloads: SourceForge's public statistics, through the knowledge service (it asks SourceForge and keeps the
+  // answer 10 minutes; the visitor's browser never talks to SourceForge), so the number matches SourceForge's own
+  // page; stats.json (written daily by the Pages workflow) if that fails
+  function fromFile() {
+    return fetch("./stats.json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { return d && d.downloads > 0 ? d.downloads : null; })
+      .catch(function () { return null; });
+  }
+  var downloads = Promise.race([
+    fetch(API + "/v1/downloads").then(function (r) { return r.ok ? r.json() : null; }),
+    new Promise(function (resolve) { setTimeout(function () { resolve(null); }, 4000); })
+  ]).then(function (d) { return d && d.downloads > 0 ? d.downloads : fromFile(); })
+    .catch(fromFile);
   /* The visitor number on a hand tally counter: the wheels roll up from 0000 to it, then the plunger clicks.
      Pressing it clicks again (it does not count anyone: the service counts each visitor once a day). */
   function tally(spot, count) {
