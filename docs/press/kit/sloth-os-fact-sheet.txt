@@ -2,7 +2,7 @@ Sloth OS - press kit
 ====================
 
 Name:          Sloth OS (two words, capital S and OS)
-Current:       1.2, released October 28, 2026
+Current:       2.0, released November 18, 2026
 What it is:    A free Linux desktop for everyday use and gaming, made for people coming from Windows.
                No terminal required.
 Base:          Universal Blue's Fedora Kinoite image (Fedora Atomic 44) with KDE Plasma
@@ -11,9 +11,9 @@ Editions:      one installer for every PC; computers with an NVIDIA card switch 
 Languages:     50 (installer, welcome wizard, Sloth Center)
 Price:         free; no account, no licence key, no ads
 Licence:       code Apache License 2.0; artwork (logo, wallpapers, boot animation) CC BY-SA 4.0
-Requirements:  64-bit PC in UEFI mode, 4 GB memory (16 GB for games), 64 GB disk, USB stick of 8 GB or more;
+Requirements:  64-bit PC (UEFI or the older BIOS mode), 4 GB memory (16 GB for games), 64 GB disk, USB stick of 8 GB or more;
                no TPM 2.0 needed
-Download:      https://sloth-os-linux.github.io/download.html (ISO 5.2 GB)
+Download:      https://sloth-os-linux.github.io/download.html (ISO 5.4 GB)
 Website:       https://sloth-os-linux.github.io/
 Source code:   https://github.com/Sloth-OS-Linux/sloth-os
 Made by:       ZsLoth, an independent developer
@@ -35,8 +35,8 @@ Sloth OS is a free Linux desktop built for people who know Windows and want a co
 It is based on Fedora Atomic and KDE Plasma through Universal Blue, so the whole system updates as one signed
 image in the background, and the previous version is always one click away.
 
-Nothing is preinstalled: a welcome wizard lets you pick your apps and a taskbar that looks like Windows 10,
-Windows 11, a Mac or Ubuntu. Sloth Center gathers every setting in one window, the way Windows' Settings does:
+Nothing is preinstalled: a welcome wizard lets you pick your apps and one of seven taskbar layouts: Windows 11,
+Windows 10, Windows 7, Mac, Ubuntu, ChromeOS or floating. Sloth Center gathers every setting in one window, the way Windows' Settings does:
 updates, displays, sound, Bluetooth, Wi-Fi, backups, network folders and "Reset this PC". For gamers, Steam,
 Proton and the graphics drivers are set up by themselves, and "Will it run?" tells how well a game runs before
 you buy it. Windows programs install with a double-click. Updates download only what changed, and every text is
